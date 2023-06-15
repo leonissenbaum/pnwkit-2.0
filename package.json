@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "darkblade",
   "license": "ISC",
   "dependencies": {
     "memoize": "^0.1.1",
@@ -16,5 +16,13 @@
   "devDependencies": {
     "@types/memoizee": "^0.4.8",
     "@types/superagent": "^4.1.18"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkblade1078/pnwkit-2.0.git"
+  },
+  "bugs": {
+    "url": "https://github.com/darkblade1078/pnwkit-2.0/issues"
+  },
+  "homepage": "https://github.com/darkblade1078/pnwkit-2.0#readme"
 }
