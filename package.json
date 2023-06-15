@@ -1,0 +1,20 @@
+{
+  "name": "pnwkit-2.0",
+  "version": "1.0.0",
+  "description": "the reincarnation of pnwkit by BSNK",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "memoize": "^0.1.1",
+    "pusher-js": "^8.0.2",
+    "superagent": "^8.0.9"
+  },
+  "devDependencies": {
+    "@types/memoizee": "^0.4.8",
+    "@types/superagent": "^4.1.18"
+  }
+}
