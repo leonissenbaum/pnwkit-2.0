@@ -1,6 +1,6 @@
 import superagent from 'superagent';
 import { responseAndMetadataI } from '../interfaces/other';
-import { anyQuery } from '../interfaces';
+import { anyCall} from '../interfaces';
 
 /**
  * An internal method of handling calls to the P&W graphQL API
@@ -43,16 +43,14 @@ class GraphQLService {
     };
   }
 
-  public async makeMutationCall(query: string, apiKey: string, bot_key: string, bot_key_api_key: string): Promise<responseAndMetadataI> {
-    if (!apiKey) throw new Error('GraphQLService: Cannot make a call without an API key!');
-    if (!bot_key) throw new Error('GraphQLService: Cannot make a call without an bot key!');
-    if (!bot_key_api_key) throw new Error('GraphQLService: Cannot make a call without a bot_key_api_key!');
+  public async makeMutationCall(query: string, xBotKey: string, xApiKey: string): Promise<responseAndMetadataI> {
+    if (!xBotKey) throw new Error('GraphQLService: Cannot make a call without an X-API-KEY!');
+    if (!xApiKey) throw new Error('GraphQLService: Cannot make a call without an X-BOT-KEY!');
 
     const res = await superagent.get(this.politicsAndWarAPIRoot)
       .query({
-        api_key: apiKey,
-        bot_key: bot_key,
-        bot_key_api_key: bot_key_api_key,
+        'X-Bot-Key': xBotKey,
+        'X-Api-Key': xApiKey,
         query,
       })
       .accept('json')
@@ -76,12 +74,12 @@ class GraphQLService {
 
   /**
    * Takes a query and outputs query Parameters
-   * @param {AnyQuery} queryParameters Any one of the five queries that take Parameters
+   * @param {anyCall} queryParameters Any one of the five queries that take Parameters
    * @param {string} enumeratorParameters Parameters who are represented as strings, but not sent as a string;
    * they are treated like numbers, with no quotes.
    * @return {string}
    */
-  public generateParameters(queryParameters: anyQuery, enumeratorParameters: string[] = []): string {
+  public generateParameters(queryParameters: anyCall, enumeratorParameters: string[] = []): string {
     const parameters: string[] = [];
 
     for (const [parameter, value] of Object.entries(queryParameters)) {

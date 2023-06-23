@@ -1,29 +1,39 @@
+import { MutationbankDepositArgs } from "./mutations/bankDeposit";
+import { queryActivityStatsArgs } from "./queries/activityStat";
 import { queryAlliancesArgs } from "./queries/alliance";
 import { queryBankrecsArgs } from "./queries/bank";
+import { queryBaseballGamesArgs, queryBaseballPlayersArgs, queryBaseballTeamsArgs } from "./queries/baseball";
 import { queryBountiesArgs } from "./queries/bounty";
 import { queryCitiesArgs } from "./queries/city";
+import { queryEmbargoesArgs } from "./queries/embargo";
 import { queryNationsArgs } from "./queries/nation";
+import { queryResourceStatsArgs } from "./queries/resourceStat";
 import { queryTradesArgs } from "./queries/trade";
 import { queryTradepricesArgs } from "./queries/tradePrice";
+import { queryTreasureTradesArgs } from "./queries/treasureTrade";
 import { queryTreatiesArgs } from "./queries/treaty";
 import { queryWarsArgs } from "./queries/war";
 import { queryWarattacksArgs } from "./queries/warAttack";
 
-export type anyQuery =
-    queryNationsArgs |
+export type anyCall =
+    queryActivityStatsArgs |
     queryAlliancesArgs |
-    queryTradepricesArgs |
-    queryTradesArgs |
-    queryWarsArgs |
     queryBankrecsArgs |
+    queryBaseballGamesArgs |
+    queryBaseballPlayersArgs |
+    queryBaseballTeamsArgs |
     queryBountiesArgs |
     queryCitiesArgs |
-    queryWarattacksArgs |
+    queryEmbargoesArgs |
+    queryNationsArgs |
+    queryResourceStatsArgs |
+    queryTradepricesArgs |
+    queryTradesArgs |
+    queryTreasureTradesArgs |
     queryTreatiesArgs |
-    queryTreatiesArgs;
-
-export type AnyQuery =
-    queryNationsArgs;
+    queryWarattacksArgs |
+    queryWarsArgs |
+    MutationbankDepositArgs;
 
 export type Maybe<T> = T | null;
 

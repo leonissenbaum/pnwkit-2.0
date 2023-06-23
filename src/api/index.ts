@@ -33,6 +33,7 @@ import treasureSubscription from "./subscriptions/treasureTradeSubscription";
 import treatySubscription from "./subscriptions/treatySubscription";
 import warAttackSubscription from "./subscriptions/warAttackSubscription";
 import warSubscription from "./subscriptions/warSubscription";
+import bankDepositMutation from "./mutations/bankDepositMutation";
 
 
 export default class PnwKitAPI {
@@ -71,4 +72,5 @@ export default class PnwKitAPI {
     treatySubscription = treatySubscription;
     warAttackSubscription = warAttackSubscription;
     warSubscription = warSubscription;
+    bankDepositMutation = bankDepositMutation;
 }

@@ -11,8 +11,8 @@ export class Kit extends PnwKitAPI {
     utilities = new PnwKitUtils;
 
     apiKey = '';
-    botKey = '';
-    botKeyApiKey = '';
+    xBotKey = '';
+    xApiKey = '';
 
     private rateLimitData = {
         resetAfterSeconds: 0,
@@ -22,21 +22,19 @@ export class Kit extends PnwKitAPI {
     };
 
     /**
-     * Set the pnwkit instance's key.
-     * @param key
+     * Set the pnwkit instance's API Key, X bot key, and X API key.
+     * @param {string} apiKey
+     * @param {string} xBotKey
+     * @param {string} xApiKey
      */
-    setKey(key: string): void {
-        this.apiKey = key;
-    }
+    setKeys(apiKey: string, xBotKey?: string, xApiKey?: string): void {
+        this.apiKey = apiKey;
 
-    /**
-    * Set the x-pnwkit instance's key.
-    * @param botKey
-    * @param botKeyApiKey
-    */
-    setBotKeys(botKey: string, botKeyApiKey: string): void {
-        this.botKey = botKey;
-        this.botKeyApiKey = botKeyApiKey;
+        if (xBotKey)
+            this.xBotKey = xBotKey;
+
+        if (xApiKey)
+            this.xApiKey = xApiKey;
     }
 
     get rateLimit(): rateLimitI {
@@ -75,8 +73,7 @@ for (const [key] of Object.entries(kit)) {
     exports[key] = kit[key];
 }
 
-exports.setKey = kit.setKey;
-exports.set_bot_key = kit.setBotKeys;
+exports.setKey = kit.setKeys;
 exports.cached = kit.cached;
 exports.setRateLimit = kit.setRateLimit;
 
