@@ -42,7 +42,7 @@ export default async function warAttackQuery(
     this.setRateLimit(res.rateLimit);
 
     if (paginator) {
-        return res.data.warattacks;
+        return res.data.warattacks as warAttackPaginator;
     }
 
     return res.data.warattacks.data as warAttack[];

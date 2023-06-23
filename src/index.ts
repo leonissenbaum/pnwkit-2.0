@@ -11,8 +11,7 @@ export class Kit extends PnwKitAPI {
     utilities = new PnwKitUtils;
 
     apiKey = '';
-    xBotKey = '';
-    xApiKey = '';
+    botKey = '';
 
     private rateLimitData = {
         resetAfterSeconds: 0,
@@ -22,19 +21,15 @@ export class Kit extends PnwKitAPI {
     };
 
     /**
-     * Set the pnwkit instance's API Key, X bot key, and X API key.
+     * Set the pnwkit instance's API Key, bot key.
      * @param {string} apiKey
-     * @param {string} xBotKey
-     * @param {string} xApiKey
+     * @param {string} botKey
      */
-    setKeys(apiKey: string, xBotKey?: string, xApiKey?: string): void {
+    setKeys(apiKey: string, botKey?: string): void {
         this.apiKey = apiKey;
 
-        if (xBotKey)
-            this.xBotKey = xBotKey;
-
-        if (xApiKey)
-            this.xApiKey = xApiKey;
+        if (botKey)
+            this.botKey = botKey;
     }
 
     get rateLimit(): rateLimitI {

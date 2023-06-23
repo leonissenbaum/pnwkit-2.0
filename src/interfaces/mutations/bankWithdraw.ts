@@ -2,13 +2,15 @@ import { Maybe, Scalars } from ".."
 import { paginatorInfo } from "../other"
 import { bankrec } from "../queries/bank"
 
-export type bankDepositPaginator = {
-    __typename?: 'bankDepositPaginator'
+export type bankWithdrawPaginator = {
+    __typename?: 'bankWithdrawPaginator'
     paginatorInfo: paginatorInfo
     data: bankrec
 }
 
-export type mutationbankDepositArgs = {
+export type mutationBankWithdrawArgs = {
+    receiver?: Scalars['Int']
+    receiver_type?: Scalars['Int']
     money?: Maybe<Scalars['Float']>
     coal?: Maybe<Scalars['Float']>
     oil?: Maybe<Scalars['Float']>
@@ -22,4 +24,4 @@ export type mutationbankDepositArgs = {
     aluminum?: Maybe<Scalars['Float']>
     food?: Maybe<Scalars['Float']>
     note?: Maybe<Scalars['String']>
-  }
+}

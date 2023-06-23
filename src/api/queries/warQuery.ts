@@ -61,7 +61,7 @@ export default async function warQuery(
   this.setRateLimit(res.rateLimit);
 
   if (paginator) {
-    return res.data.wars;
+    return res.data.wars as warPaginator;
   }
 
   return res.data.wars.data as war[];

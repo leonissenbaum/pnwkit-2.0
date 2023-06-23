@@ -55,7 +55,7 @@ export default async function bountyQuery(
   this.setRateLimit(res.rateLimit);
 
   if (paginator) {
-    return res.data.bounties;
+    return res.data.bounties as bountyPaginator;
   }
 
   return res.data.bounties.data as bounty[];

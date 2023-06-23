@@ -1,4 +1,11 @@
-import { MutationbankDepositArgs } from "./mutations/bankDeposit";
+import { mutationApproveTreatyArgs } from "./mutations/approveTreaty";
+import { mutationAssignTaxBracketArgs } from "./mutations/assignTaxBracket";
+import { mutationbankDepositArgs } from "./mutations/bankDeposit";
+import { mutationBankWithdrawArgs } from "./mutations/bankWithdraw";
+import { mutationCancelTreatyArgs } from "./mutations/cancelTreaty";
+import { mutationCreateTaxBracketArgs } from "./mutations/createTaxBracket";
+import { mutationDeleteTaxBracketArgs } from "./mutations/deleteTaxBracket";
+import { mutationProposeTreatyArgs } from "./mutations/proposeTreaty";
 import { queryActivityStatsArgs } from "./queries/activityStat";
 import { queryAlliancesArgs } from "./queries/alliance";
 import { queryBankrecsArgs } from "./queries/bank";
@@ -33,7 +40,14 @@ export type anyCall =
     queryTreatiesArgs |
     queryWarattacksArgs |
     queryWarsArgs |
-    MutationbankDepositArgs;
+    mutationbankDepositArgs |
+    mutationBankWithdrawArgs |
+    mutationApproveTreatyArgs |
+    mutationCancelTreatyArgs |
+    mutationAssignTaxBracketArgs |
+    mutationCreateTaxBracketArgs |
+    mutationDeleteTaxBracketArgs |
+    mutationProposeTreatyArgs;
 
 export type Maybe<T> = T | null;
 

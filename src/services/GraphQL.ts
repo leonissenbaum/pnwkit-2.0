@@ -1,6 +1,6 @@
 import superagent from 'superagent';
 import { responseAndMetadataI } from '../interfaces/other';
-import { anyCall} from '../interfaces';
+import { anyCall } from '../interfaces';
 
 /**
  * An internal method of handling calls to the P&W graphQL API
@@ -43,15 +43,28 @@ class GraphQLService {
     };
   }
 
-  public async makeMutationCall(query: string, xBotKey: string, xApiKey: string): Promise<responseAndMetadataI> {
-    if (!xBotKey) throw new Error('GraphQLService: Cannot make a call without an X-API-KEY!');
-    if (!xApiKey) throw new Error('GraphQLService: Cannot make a call without an X-BOT-KEY!');
+  /**
+ * Calls the Politics and War V3 API with a mutation
+ * @param {string} query The GraphQL query to make
+ * @param {string} apiKey Your P&W API key
+ * @param {string} botKey Your P&W bot key
+ *
+ * @return {Promise<any>} Returns data to be type determined in a closer function
+ * @throws {Error}
+ */
+  public async makeMutationCall(query: string, apiKey: string, botKey: string): Promise<responseAndMetadataI> {
+    if (!botKey) throw new Error('GraphQLService: Cannot make a call without an botKey!');
+    if (!apiKey) throw new Error('GraphQLService: Cannot make a call without an API key!');
+    
 
     const res = await superagent.get(this.politicsAndWarAPIRoot)
       .query({
-        'X-Bot-Key': xBotKey,
-        'X-Api-Key': xApiKey,
+        api_key: apiKey,
         query,
+      })
+      .set({
+        'X-Bot-Key': botKey,
+        'X-Api-Key': apiKey
       })
       .accept('json')
       .then()
@@ -114,7 +127,7 @@ class GraphQLService {
 
         interpretedValue = interpretedValue.slice(0, -1);
         interpretedValue += '}';
-        
+
         parameters.push(interpretedValue);
       } else {
         parameters.push(`${parameter}: ${value}`);

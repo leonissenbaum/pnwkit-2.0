@@ -55,7 +55,7 @@ export default async function cityQuery(
     this.setRateLimit(res.rateLimit);
 
     if (paginator) {
-        return res.data.cities;
+        return res.data.cities as cityPaginator;
     }
 
     return res.data.cities.data as city[];

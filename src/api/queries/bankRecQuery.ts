@@ -64,7 +64,7 @@ export default async function bankRecordsQuery(
     this.setRateLimit(res.rateLimit);
 
     if (paginator) {
-        return res.data.bankrecs;
+        return res.data.bankrecs as bankrecPaginator;
     }
 
     return res.data.bankrecs.data as bankrec[];

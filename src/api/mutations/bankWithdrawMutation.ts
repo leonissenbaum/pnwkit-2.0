@@ -1,9 +1,11 @@
 import { Kit } from '../..';
-import { mutationbankDepositArgs, bankDepositPaginator } from '../../interfaces/mutations/bankDeposit';
+import { bankWithdrawPaginator, mutationBankWithdrawArgs } from '../../interfaces/mutations/bankWithdraw';
 import { bankrec } from '../../interfaces/queries/bank';
 import GraphQL from '../../services/GraphQL';
 
 export interface Parameters {
+    receiver: number;
+    receiver_type: number;
     money?: number;
     coal?: number;
     oil?: number;
@@ -20,25 +22,25 @@ export interface Parameters {
 }
 
 /**
- * Deposit resources into your bank
+ * Withdraw resources into your bank
  * @param {Parameters} params Query parameters to customize your results
  * @param {string} query The graphql query to get info with
  * @param {boolean} paginator If true it will return paginator info
- * @return {Promise<bankrec | bankDepositPaginator>}
+ * @return {Promise<bankrec | bankWithdrawPaginator>}
  */
-export default async function bankDepositMutation(this: Kit, params: Parameters, query: string, paginator?: false): Promise<bankrec>;
-export default async function bankDepositMutation(this: Kit, params: Parameters, query: string, paginator: true): Promise<bankDepositPaginator>;
-export default async function bankDepositMutation(
+export default async function bankWithdrawMutation(this: Kit, params: Parameters, query: string, paginator?: false): Promise<bankrec>;
+export default async function bankWithdrawMutation(this: Kit, params: Parameters, query: string, paginator: true): Promise<bankWithdrawPaginator>;
+export default async function bankWithdrawMutation(
     this: Kit,
     params: Parameters,
     query: string,
     paginator?: boolean,
-): Promise<bankrec | bankDepositPaginator> {
-    const argsToParameters = GraphQL.generateParameters(params as mutationbankDepositArgs);
+): Promise<bankrec | bankWithdrawPaginator> {
+    const argsToParameters = GraphQL.generateParameters(params as mutationBankWithdrawArgs);
 
     const res = await GraphQL.makeMutationCall(`
     mutation {
-       bankDeposit${argsToParameters} {
+       bankWithdraw${argsToParameters} {
        ${(paginator) ?
             `
           paginatorInfo {
@@ -66,8 +68,8 @@ export default async function bankDepositMutation(
     this.setRateLimit(res.rateLimit);
 
     if (paginator) {
-        return res.data.bankDeposit as bankDepositPaginator;
+        return res.data.bankWithdraw as bankWithdrawPaginator;
     }
 
-    return res.data.bankDeposit as bankrec;
+    return res.data.bankWithdraw as bankrec;
 }

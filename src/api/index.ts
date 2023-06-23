@@ -34,6 +34,14 @@ import treatySubscription from "./subscriptions/treatySubscription";
 import warAttackSubscription from "./subscriptions/warAttackSubscription";
 import warSubscription from "./subscriptions/warSubscription";
 import bankDepositMutation from "./mutations/bankDepositMutation";
+import bankWithdrawMutation from "./mutations/bankWithdrawMutation";
+import approveTreatyMutation from "./mutations/approveTreatyMutation";
+import assignTaxBracketMutation from "./mutations/assignTaxBracketMutation";
+import cancelTreatyMutation from "./mutations/cancelTreatyMutation";
+import createTaxBracketMutation from "./mutations/createTaxBracketMutation";
+import deleteTaxBracketMutation from "./mutations/deleteTaxBracketMutation";
+import editTaxBracketMutation from "./mutations/editTaxBracketMutation";
+import proposeTreatyMutation from "./mutations/proposeTreatyMutation";
 
 
 export default class PnwKitAPI {
@@ -72,5 +80,13 @@ export default class PnwKitAPI {
     treatySubscription = treatySubscription;
     warAttackSubscription = warAttackSubscription;
     warSubscription = warSubscription;
+    approveTreatyMutation = approveTreatyMutation;
+    assignTaxBracketMutation = assignTaxBracketMutation;
     bankDepositMutation = bankDepositMutation;
+    bankWithdrawMutation = bankWithdrawMutation;
+    cancelTreatyMutation = cancelTreatyMutation;
+    createTaxBracketMutation = createTaxBracketMutation;
+    deleteTaxBracketMutation = deleteTaxBracketMutation;
+    editTaxBracketMutation = editTaxBracketMutation;
+    proposeTreatyMutation = proposeTreatyMutation;
 }
