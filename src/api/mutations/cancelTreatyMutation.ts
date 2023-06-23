@@ -1,4 +1,4 @@
-import { Kit } from '../../..';
+import { Kit } from '../..';
 import { cancelTreatyPaginator, mutationCancelTreatyArgs } from '../../interfaces/mutations/cancelTreaty';
 import { treaty } from '../../interfaces/queries/treaty';
 import GraphQL from '../../services/GraphQL';

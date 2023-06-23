@@ -1,4 +1,4 @@
-import { Kit } from '../../..';
+import { Kit } from '../..';
 import { editTaxBracketPaginator, mutationEditTaxBracketArgs } from '../../interfaces/mutations/editTaxBracket';
 import { taxBracket } from '../../interfaces/queries/bank';
 import GraphQL from '../../services/GraphQL';
