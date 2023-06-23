@@ -50,3 +50,4 @@ function treasureSubscription(event, callback, filters) {
     });
 }
 exports.default = treasureSubscription;
+//# sourceMappingURL=treasureTradeSubscription.js.map

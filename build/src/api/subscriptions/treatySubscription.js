@@ -50,3 +50,4 @@ function treatySubscription(event, callback, filters) {
     });
 }
 exports.default = treatySubscription;
+//# sourceMappingURL=treatySubscription.js.map

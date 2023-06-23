@@ -11,3 +11,4 @@ function foodConsumption(basePopulation, cityAge, cities) {
     return ((basePopulation) ^ 2 / 125000000 + ((basePopulation) * (1 + Math.log(cityAge) / 15) - basePopulation) / 850) * cities;
 }
 exports.default = foodConsumption;
+//# sourceMappingURL=foodConsumption.js.map

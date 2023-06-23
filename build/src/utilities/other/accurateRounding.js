@@ -11,3 +11,4 @@ function accurateRounding(number, precision) {
     return Math.round(number * multiplier) / multiplier;
 }
 exports.default = accurateRounding;
+//# sourceMappingURL=accurateRounding.js.map

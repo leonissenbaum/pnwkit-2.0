@@ -45,3 +45,4 @@ function treatyQuery(params, query, paginator) {
     });
 }
 exports.default = treatyQuery;
+//# sourceMappingURL=treatyQuery.js.map

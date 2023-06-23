@@ -45,3 +45,4 @@ function treasureTradeQuery(params, query, paginator) {
     });
 }
 exports.default = treasureTradeQuery;
+//# sourceMappingURL=treasureTradeQuery.js.map

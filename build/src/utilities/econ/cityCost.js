@@ -68,3 +68,4 @@ function cityCost(startingCity, endingCity, resourcePrices, UP, AUP, MP, MD, GSA
     return costs;
 }
 exports.default = cityCost;
+//# sourceMappingURL=cityCost.js.map

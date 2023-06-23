@@ -12,3 +12,4 @@ var queryActivityStatsOrderByColumn;
     queryActivityStatsOrderByColumn["ACTIVE_1_WEEK"] = "ACTIVE_1_WEEK";
     queryActivityStatsOrderByColumn["ACTIVE_1_MONTH"] = "ACTIVE_1_MONTH";
 })(queryActivityStatsOrderByColumn = exports.queryActivityStatsOrderByColumn || (exports.queryActivityStatsOrderByColumn = {}));
+//# sourceMappingURL=activityStat.js.map

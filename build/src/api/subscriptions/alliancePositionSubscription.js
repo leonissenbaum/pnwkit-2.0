@@ -50,3 +50,4 @@ function alliancePositionSubscription(event, callback, filters) {
     });
 }
 exports.default = alliancePositionSubscription;
+//# sourceMappingURL=alliancePositionSubscription.js.map

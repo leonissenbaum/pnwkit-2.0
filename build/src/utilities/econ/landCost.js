@@ -71,3 +71,4 @@ function landCostFormula(starting_amount, ending_amount) {
 function landPrice(amount) {
     return (.002 * (amount - 20) * (amount - 20)) + 50;
 }
+//# sourceMappingURL=landCost.js.map

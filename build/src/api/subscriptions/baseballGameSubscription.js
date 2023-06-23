@@ -50,3 +50,4 @@ function baseballGameSubscription(event, callback, filters) {
     });
 }
 exports.default = baseballGameSubscription;
+//# sourceMappingURL=baseballGameSubscription.js.map

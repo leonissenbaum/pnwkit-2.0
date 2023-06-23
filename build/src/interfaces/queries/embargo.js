@@ -13,3 +13,4 @@ var embargoType;
     embargoType["ALLIANCE_TO_NATION"] = "ALLIANCE_TO_NATION";
     embargoType["ALLIANCE_TO_ALLIANCE"] = "ALLIANCE_TO_ALLIANCE";
 })(embargoType = exports.embargoType || (exports.embargoType = {}));
+//# sourceMappingURL=embargo.js.map

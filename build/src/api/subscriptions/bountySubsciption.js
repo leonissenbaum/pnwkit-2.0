@@ -41,3 +41,4 @@ function bountySubscription(event, callback) {
     });
 }
 exports.default = bountySubscription;
+//# sourceMappingURL=bountySubsciption.js.map

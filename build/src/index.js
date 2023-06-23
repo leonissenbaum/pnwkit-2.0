@@ -77,3 +77,4 @@ exports.set_bot_key = kit.setBotKeys;
 exports.cached = kit.cached;
 exports.setRateLimit = kit.setRateLimit;
 exports.default = kit;
+//# sourceMappingURL=index.js.map

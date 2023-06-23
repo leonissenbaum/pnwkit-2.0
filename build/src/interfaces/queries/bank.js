@@ -18,3 +18,4 @@ var queryBankrecsOrderByColumn;
     queryBankrecsOrderByColumn["Aluminum"] = "ALUMINUM";
     queryBankrecsOrderByColumn["Food"] = "FOOD";
 })(queryBankrecsOrderByColumn = exports.queryBankrecsOrderByColumn || (exports.queryBankrecsOrderByColumn = {}));
+//# sourceMappingURL=bank.js.map

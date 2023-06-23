@@ -14,3 +14,4 @@ function foodProduction(cities, farms, land, MI, season, radiation) {
     return (farms * land / (MI ? 400 : 500)) * season * radiation * cities * 12;
 }
 exports.default = foodProduction;
+//# sourceMappingURL=foodProduction.js.map

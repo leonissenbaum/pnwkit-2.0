@@ -16,3 +16,4 @@ var alliancePositionEnum;
     alliancePositionEnum["Heir"] = "HEIR";
     alliancePositionEnum["Leader"] = "LEADER";
 })(alliancePositionEnum = exports.alliancePositionEnum || (exports.alliancePositionEnum = {}));
+//# sourceMappingURL=alliance.js.map

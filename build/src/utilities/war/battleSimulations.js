@@ -241,3 +241,4 @@ function seaBattle(attackingShips, defendingShips) {
     return results;
 }
 exports.seaBattle = seaBattle;
+//# sourceMappingURL=battleSimulations.js.map

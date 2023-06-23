@@ -50,3 +50,4 @@ function nationSubscription(event, callback, filters) {
     });
 }
 exports.default = nationSubscription;
+//# sourceMappingURL=nationSubscription.js.map

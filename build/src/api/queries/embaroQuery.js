@@ -45,3 +45,4 @@ function embargoQuery(params, query, paginator) {
     });
 }
 exports.default = embargoQuery;
+//# sourceMappingURL=embaroQuery.js.map

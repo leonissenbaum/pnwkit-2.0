@@ -139,3 +139,4 @@ class GraphQLService {
     }
 }
 exports.default = new GraphQLService();
+//# sourceMappingURL=GraphQL.js.map

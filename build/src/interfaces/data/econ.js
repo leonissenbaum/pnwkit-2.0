@@ -21,3 +21,4 @@ var resourceType;
     resourceType["GASOLINE"] = "gasoline";
     resourceType["MUNITIONS"] = "munitions";
 })(resourceType = exports.resourceType || (exports.resourceType = {}));
+//# sourceMappingURL=econ.js.map

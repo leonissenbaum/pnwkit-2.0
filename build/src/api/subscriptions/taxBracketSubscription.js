@@ -50,3 +50,4 @@ function taxBracketSubscription(event, callback, filters) {
     });
 }
 exports.default = taxBracketSubscription;
+//# sourceMappingURL=taxBracketSubscription.js.map

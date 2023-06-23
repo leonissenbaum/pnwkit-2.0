@@ -14,3 +14,4 @@ var queryBountiesOrderByColumn;
     queryBountiesOrderByColumn["Date"] = "DATE";
     queryBountiesOrderByColumn["Amount"] = "AMOUNT";
 })(queryBountiesOrderByColumn = exports.queryBountiesOrderByColumn || (exports.queryBountiesOrderByColumn = {}));
+//# sourceMappingURL=bounty.js.map

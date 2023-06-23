@@ -34,3 +34,4 @@ function resourceProduction(cities, resource, slots, project) {
     }
 }
 exports.default = resourceProduction;
+//# sourceMappingURL=resourceProduction.js.map

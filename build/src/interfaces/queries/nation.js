@@ -35,3 +35,4 @@ var domesticPolicy;
     domesticPolicy["URBANIZATION"] = "URBANIZATION";
     domesticPolicy["RAPID_EXPANSION"] = "RAPID_EXPANSION";
 })(domesticPolicy = exports.domesticPolicy || (exports.domesticPolicy = {}));
+//# sourceMappingURL=nation.js.map

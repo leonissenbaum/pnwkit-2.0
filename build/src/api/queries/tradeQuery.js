@@ -46,3 +46,4 @@ function tradeQuery(params, query, paginator) {
     });
 }
 exports.default = tradeQuery;
+//# sourceMappingURL=tradeQuery.js.map

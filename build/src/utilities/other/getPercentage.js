@@ -10,3 +10,4 @@ function getPercentage(number, percentage) {
     return (percentage / 100) * number;
 }
 exports.default = getPercentage;
+//# sourceMappingURL=getPercentage.js.map

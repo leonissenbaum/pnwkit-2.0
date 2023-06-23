@@ -45,3 +45,4 @@ function allianceQuery(params, query, paginator) {
     });
 }
 exports.default = allianceQuery;
+//# sourceMappingURL=allianceQuery.js.map

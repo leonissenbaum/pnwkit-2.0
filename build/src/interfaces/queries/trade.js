@@ -16,3 +16,4 @@ var tradeType;
     tradeType["Personal"] = "PERSONAL";
     tradeType["Alliance"] = "ALLIANCE";
 })(tradeType = exports.tradeType || (exports.tradeType = {}));
+//# sourceMappingURL=trade.js.map

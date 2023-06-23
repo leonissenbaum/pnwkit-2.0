@@ -25,3 +25,4 @@ var attackType;
     attackType["VICTORY"] = "VICTORY";
     attackType["ALLIANCELOOT"] = "ALLIANCELOOT";
 })(attackType = exports.attackType || (exports.attackType = {}));
+//# sourceMappingURL=warAttack.js.map

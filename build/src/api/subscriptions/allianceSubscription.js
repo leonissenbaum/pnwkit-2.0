@@ -50,3 +50,4 @@ function allianceSubscription(event, callback, filters) {
     });
 }
 exports.default = allianceSubscription;
+//# sourceMappingURL=allianceSubscription.js.map

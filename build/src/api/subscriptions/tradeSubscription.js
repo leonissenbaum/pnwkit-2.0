@@ -50,3 +50,4 @@ function tradeSubscription(event, callback, filters) {
     });
 }
 exports.default = tradeSubscription;
+//# sourceMappingURL=tradeSubscription.js.map

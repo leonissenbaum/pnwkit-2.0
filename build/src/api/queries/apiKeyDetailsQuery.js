@@ -32,3 +32,4 @@ function apiKeyDetailsQuery(query) {
     });
 }
 exports.default = apiKeyDetailsQuery;
+//# sourceMappingURL=apiKeyDetailsQuery.js.map

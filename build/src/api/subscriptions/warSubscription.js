@@ -50,3 +50,4 @@ function warSubscription(event, callback, filters) {
     });
 }
 exports.default = warSubscription;
+//# sourceMappingURL=warSubscription.js.map

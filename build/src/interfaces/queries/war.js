@@ -12,3 +12,4 @@ var queryWarsOrderByColumn;
     queryWarsOrderByColumn["Id"] = "ID";
     queryWarsOrderByColumn["Date"] = "DATE";
 })(queryWarsOrderByColumn = exports.queryWarsOrderByColumn || (exports.queryWarsOrderByColumn = {}));
+//# sourceMappingURL=war.js.map

@@ -11,3 +11,4 @@ var operationType;
     operationType["GATHERINTELLIGENCE"] = "gatherIntelligence";
     operationType["ASSASSINATESPIES"] = "assassinateSpies";
 })(operationType = exports.operationType || (exports.operationType = {}));
+//# sourceMappingURL=war.js.map

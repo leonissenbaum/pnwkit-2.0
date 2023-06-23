@@ -7,3 +7,4 @@ var subscriptionEvent;
     subscriptionEvent["UPDATE"] = "update";
     subscriptionEvent["DELETE"] = "delete";
 })(subscriptionEvent = exports.subscriptionEvent || (exports.subscriptionEvent = {}));
+//# sourceMappingURL=index.js.map

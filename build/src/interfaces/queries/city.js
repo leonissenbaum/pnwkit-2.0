@@ -9,3 +9,4 @@ var queryCitiesOrderByColumn;
     queryCitiesOrderByColumn["Maxinfra"] = "MAXINFRA";
     queryCitiesOrderByColumn["Land"] = "LAND";
 })(queryCitiesOrderByColumn = exports.queryCitiesOrderByColumn || (exports.queryCitiesOrderByColumn = {}));
+//# sourceMappingURL=city.js.map

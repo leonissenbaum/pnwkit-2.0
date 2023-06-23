@@ -72,3 +72,4 @@ function infraCostFormula(startingAmount, endingAmount) {
 function InfraPrice(amount) {
     return (Math.pow(Math.abs(amount - 10), 2.2) / 710) + 300;
 }
+//# sourceMappingURL=infraCost.js.map

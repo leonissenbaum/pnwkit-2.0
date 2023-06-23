@@ -27,6 +27,9 @@ class PnwKitUtils {
         this.warSpyranges = warSpyRanges_1.default;
         this.espionageOdds = espionageOdds_1.default;
         this.groundBattle = battleSimulations_1.groundBattle;
+        this.airBattle = battleSimulations_1.airBattle;
+        this.seaBattle = battleSimulations_1.seaBattle;
     }
 }
 exports.default = PnwKitUtils;
+//# sourceMappingURL=index.js.map

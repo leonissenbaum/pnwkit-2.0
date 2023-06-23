@@ -46,3 +46,4 @@ function bountyQuery(params, query, paginator) {
     });
 }
 exports.default = bountyQuery;
+//# sourceMappingURL=bountyQuery.js.map

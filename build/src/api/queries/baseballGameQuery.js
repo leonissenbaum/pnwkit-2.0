@@ -45,3 +45,4 @@ function baseballGameQuery(params, query, paginator) {
     });
 }
 exports.default = baseballGameQuery;
+//# sourceMappingURL=baseballGameQuery.js.map

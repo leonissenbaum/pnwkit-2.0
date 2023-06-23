@@ -7,3 +7,4 @@ var queryTreatiesOrderByColumn;
     queryTreatiesOrderByColumn["Date"] = "DATE";
     queryTreatiesOrderByColumn["TurnsLeft"] = "TURNS_LEFT";
 })(queryTreatiesOrderByColumn = exports.queryTreatiesOrderByColumn || (exports.queryTreatiesOrderByColumn = {}));
+//# sourceMappingURL=treaty.js.map

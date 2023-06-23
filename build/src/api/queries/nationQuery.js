@@ -45,3 +45,4 @@ function nationQuery(params, query, paginator) {
     });
 }
 exports.default = nationQuery;
+//# sourceMappingURL=nationQuery.js.map

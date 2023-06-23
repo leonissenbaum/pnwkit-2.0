@@ -22,3 +22,4 @@ function warSpyRanges(score) {
     };
 }
 exports.default = warSpyRanges;
+//# sourceMappingURL=warSpyRanges.js.map

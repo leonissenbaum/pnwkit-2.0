@@ -32,3 +32,4 @@ function treasureQuery(query) {
     });
 }
 exports.default = treasureQuery;
+//# sourceMappingURL=treasureQuery.js.map

@@ -45,3 +45,4 @@ function activityStatQuery(params, query, paginator) {
     });
 }
 exports.default = activityStatQuery;
+//# sourceMappingURL=activityStatQuery.js.map

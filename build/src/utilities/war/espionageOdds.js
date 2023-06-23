@@ -37,3 +37,4 @@ function espionageOdds(safetyLevel, operation, yourSpies, enemySpies) {
     return odds;
 }
 exports.default = espionageOdds;
+//# sourceMappingURL=espionageOdds.js.map

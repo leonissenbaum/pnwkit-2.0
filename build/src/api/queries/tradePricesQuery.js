@@ -46,3 +46,4 @@ function tradePricesQuery(params, query, paginator) {
     });
 }
 exports.default = tradePricesQuery;
+//# sourceMappingURL=tradePricesQuery.js.map

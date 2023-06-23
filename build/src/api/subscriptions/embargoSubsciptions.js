@@ -50,3 +50,4 @@ function embargoSubscription(event, callback, filters) {
     });
 }
 exports.default = embargoSubscription;
+//# sourceMappingURL=embargoSubsciptions.js.map

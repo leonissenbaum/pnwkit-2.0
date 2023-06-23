@@ -50,3 +50,4 @@ function warAttackSubscription(event, callback, filters) {
     });
 }
 exports.default = warAttackSubscription;
+//# sourceMappingURL=warAttackSubscription.js.map

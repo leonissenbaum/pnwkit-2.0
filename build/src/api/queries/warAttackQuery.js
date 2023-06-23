@@ -31,3 +31,4 @@ function warAttackQuery(params, query, paginator) {
     });
 }
 exports.default = warAttackQuery;
+//# sourceMappingURL=warAttackQuery.js.map

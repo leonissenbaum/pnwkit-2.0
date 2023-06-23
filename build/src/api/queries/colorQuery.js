@@ -32,3 +32,4 @@ function colorQuery(query) {
     });
 }
 exports.default = colorQuery;
+//# sourceMappingURL=colorQuery.js.map

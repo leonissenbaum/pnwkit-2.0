@@ -1,0 +1,1 @@
+{"version":3,"file":"accurateRounding.js","sourceRoot":"","sources":["../../../../src/utilities/other/accurateRounding.ts"],"names":[],"mappings":";;AAAA;;;;;GAKG;AACH,SAAwB,gBAAgB,CAAC,MAAc,EAAE,SAAiB;IACtE,IAAI,UAAU,GAAG,IAAI,CAAC,GAAG,CAAC,EAAE,EAAE,SAAS,CAAC,CAAC;IACzC,OAAO,IAAI,CAAC,KAAK,CAAC,MAAM,GAAG,UAAU,CAAC,GAAG,UAAU,CAAC;AACtD,CAAC;AAHH,mCAGG"}

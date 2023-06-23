@@ -5,3 +5,4 @@ var queryTreasureTradesOrderByColumn;
 (function (queryTreasureTradesOrderByColumn) {
     queryTreasureTradesOrderByColumn["ID"] = "ID";
 })(queryTreasureTradesOrderByColumn = exports.queryTreasureTradesOrderByColumn || (exports.queryTreasureTradesOrderByColumn = {}));
+//# sourceMappingURL=treasureTrade.js.map

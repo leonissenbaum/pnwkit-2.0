@@ -78,3 +78,4 @@ class PnwKitAPI {
     }
 }
 exports.default = PnwKitAPI;
+//# sourceMappingURL=index.js.map

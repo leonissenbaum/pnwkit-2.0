@@ -46,3 +46,4 @@ function bankRecordsQuery(params, query, paginator) {
     });
 }
 exports.default = bankRecordsQuery;
+//# sourceMappingURL=bankRecQuery.js.map

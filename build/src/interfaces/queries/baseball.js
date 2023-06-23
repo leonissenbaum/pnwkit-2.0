@@ -33,3 +33,4 @@ var queryBaseballTeamsOrderByColumn;
     queryBaseballTeamsOrderByColumn["Strikeouts"] = "STRIKEOUTS";
     queryBaseballTeamsOrderByColumn["Games"] = "GAMES";
 })(queryBaseballTeamsOrderByColumn = exports.queryBaseballTeamsOrderByColumn || (exports.queryBaseballTeamsOrderByColumn = {}));
+//# sourceMappingURL=baseball.js.map

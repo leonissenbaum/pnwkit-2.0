@@ -17,3 +17,4 @@ var queryResourceStatsOrderByColumn;
     queryResourceStatsOrderByColumn["BAUXITE"] = "BAUXITE";
     queryResourceStatsOrderByColumn["LEAD"] = "LEAD";
 })(queryResourceStatsOrderByColumn = exports.queryResourceStatsOrderByColumn || (exports.queryResourceStatsOrderByColumn = {}));
+//# sourceMappingURL=resourceStat.js.map

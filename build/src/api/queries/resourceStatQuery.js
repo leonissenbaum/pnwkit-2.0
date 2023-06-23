@@ -45,3 +45,4 @@ function resourceStatQuery(params, query, paginator) {
     });
 }
 exports.default = resourceStatQuery;
+//# sourceMappingURL=resourceStatQuery.js.map

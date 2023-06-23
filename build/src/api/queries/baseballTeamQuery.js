@@ -45,3 +45,4 @@ function baseballTeamQuery(params, query, paginator) {
     });
 }
 exports.default = baseballTeamQuery;
+//# sourceMappingURL=baseballTeamQuery.js.map

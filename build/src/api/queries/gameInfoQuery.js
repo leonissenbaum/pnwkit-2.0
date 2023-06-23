@@ -32,3 +32,4 @@ function gameInfoQuery(query) {
     });
 }
 exports.default = gameInfoQuery;
+//# sourceMappingURL=gameInfoQuery.js.map

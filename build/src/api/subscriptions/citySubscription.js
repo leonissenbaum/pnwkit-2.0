@@ -50,3 +50,4 @@ function citySubscription(event, callback, filters) {
     });
 }
 exports.default = citySubscription;
+//# sourceMappingURL=citySubscription.js.map

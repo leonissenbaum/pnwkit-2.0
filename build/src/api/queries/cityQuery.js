@@ -46,3 +46,4 @@ function cityQuery(params, query, paginator) {
     });
 }
 exports.default = cityQuery;
+//# sourceMappingURL=cityQuery.js.map

@@ -50,3 +50,4 @@ function bankRecSubscription(event, callback, filters) {
     });
 }
 exports.default = bankRecSubscription;
+//# sourceMappingURL=bankRecSubscription.js.map
