@@ -6,7 +6,8 @@ import landCost from './econ/landCost';
 import resourceProduction from './econ/resourceProduction';
 import accurateRounding from './other/accurateRounding';
 import getPercentage from './other/getPercentage';
-import warSpyRanges from './war/warSpyRanges';
+import spyRange from './war/spyRange';
+import warRange from './war/warRange';
 import espionageOdds from './war/espionageOdds';
 import { groundBattle, airBattle, seaBattle } from './war/battleSimulations'
 
@@ -19,7 +20,8 @@ export default class PnwKitUtils {
     foodProduciton = foodProduction;
     foodConsumption = foodConsumption;
     resourceProduction = resourceProduction;
-    warSpyranges = warSpyRanges;
+    warRange = warRange;
+    spyRange = spyRange;
     espionageOdds = espionageOdds;
     groundBattle = groundBattle;
     airBattle = airBattle;

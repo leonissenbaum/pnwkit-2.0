@@ -8,19 +8,23 @@ export enum operationType {
     ASSASSINATESPIES = 'assassinateSpies',
 }
 
+export type spyRanges = {
+    OffensiveSpyRangeMin: number;
+    OffensiveSpyRangeMax: number;
+    DefensiveSpyRangeMin: number;
+    DefensiveSpyRangeMax: number;
+}
+
 export type warRanges = {
-    war: {
-        OffensiveWarRangeMin: number;
-        OffensiveWarRangeMax: number;
-        DefensiveWarRangeMin: number;
-        DefensiveWarRangeMax: number;
-    }
-    spy: {
-        OffensiveSpyRangeMin: number;
-        OffensiveSpyRangeMax: number;
-        DefensiveSpyRangeMin: number;
-        DefensiveSpyRangeMax: number;
-    }
+    OffensiveWarRangeMin: number;
+    OffensiveWarRangeMax: number;
+    DefensiveWarRangeMin: number;
+    DefensiveWarRangeMax: number;
+}
+
+export type activeWars = {
+    offensive: number;
+    defensive: number;
 }
 
 export type groundBattleData = {
