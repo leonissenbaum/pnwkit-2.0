@@ -42,6 +42,7 @@ import createTaxBracketMutation from "./mutations/createTaxBracketMutation";
 import deleteTaxBracketMutation from "./mutations/deleteTaxBracketMutation";
 import editTaxBracketMutation from "./mutations/editTaxBracketMutation";
 import proposeTreatyMutation from "./mutations/proposeTreatyMutation";
+import sendMessage from "./v2/sendMessage";
 
 
 export default class PnwKitAPI {
@@ -89,4 +90,5 @@ export default class PnwKitAPI {
     deleteTaxBracketMutation = deleteTaxBracketMutation;
     editTaxBracketMutation = editTaxBracketMutation;
     proposeTreatyMutation = proposeTreatyMutation;
+    sendMessage = sendMessage;
 }

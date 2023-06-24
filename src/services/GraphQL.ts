@@ -55,7 +55,7 @@ class GraphQLService {
   public async makeMutationCall(query: string, apiKey: string, botKey: string): Promise<responseAndMetadataI> {
     if (!botKey) throw new Error('GraphQLService: Cannot make a call without an botKey!');
     if (!apiKey) throw new Error('GraphQLService: Cannot make a call without an API key!');
-    
+
 
     const res = await superagent.get(this.politicsAndWarAPIRoot)
       .query({
