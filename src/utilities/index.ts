@@ -9,7 +9,8 @@ import getPercentage from './other/getPercentage';
 import spyRange from './war/spyRange';
 import warRange from './war/warRange';
 import espionageOdds from './war/espionageOdds';
-import { groundBattle, airBattle, seaBattle } from './war/battleSimulations'
+import { groundBattle, airBattle, seaBattle } from './war/battleSimulations';
+import { pollution, pollutionIndex, crime, disease } from './econ/cityEffects';
 
 export default class PnwKitUtils {
     getPercentage = getPercentage;
@@ -26,4 +27,8 @@ export default class PnwKitUtils {
     groundBattle = groundBattle;
     airBattle = airBattle;
     seaBattle = seaBattle;
+    pollution = pollution;
+    pollutionIndex = pollutionIndex;
+    crime = crime;
+    disease = disease;
 }
