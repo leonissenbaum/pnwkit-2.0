@@ -15,20 +15,11 @@ import getPercentage from "../other/getPercentage";
 export default function infraCost(startingAmount: number, endingAmount: number, cities: number, CCE: boolean, AEC: boolean, URB: boolean, GSA: boolean) {
 
   let infraPrice = infraCostFormula(startingAmount, endingAmount);
-  let percentage = 0;
+  let percentage = 100;
+  percentage -= (CCE && AEC) ? percentage = 10 : (CCE ? 5 : 0);
+  percentage -= (URB && GSA ? 7.5 : (URB ? 5 : 0));
 
-  if (CCE)
-    percentage += 5;
-
-  if (AEC)
-    percentage += 5;
-
-  if (URB && GSA)
-    percentage += 7.5;
-  else if (URB)
-    percentage += 5;
-
-  infraPrice -= getPercentage(infraPrice, percentage);
+  infraPrice = getPercentage(infraPrice, percentage);
 
   if (cities > 0)
     infraPrice *= cities;

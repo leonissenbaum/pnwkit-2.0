@@ -15,20 +15,12 @@ import getPercentage from "../other/getPercentage";
 export default function landCost(startingAmount: number, endingAmount: number, cities: number, ALA: boolean, AEC: boolean, RE: boolean, GSA: boolean) {
 
     let landPrice = landCostFormula(startingAmount, endingAmount);
-    let percentage = 0;
+    let percentage = 100;
 
-    if (ALA)
-        percentage += 5;
+    percentage -= (ALA && AEC) ? percentage = 10 : (ALA ? 5 : 0);
+    percentage -= (RE && GSA ? 7.5 : (RE ? 5 : 0));
 
-    if (AEC)
-        percentage += 5;
-
-    if (RE && GSA)
-        percentage += 7.5;
-    else if (RE)
-        percentage += 5;
-
-    landPrice -= getPercentage(landPrice, percentage);
+    landPrice = getPercentage(landPrice, percentage);
 
     if (cities > 0)
         landPrice *= cities;

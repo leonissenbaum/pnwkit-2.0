@@ -17,7 +17,7 @@ export default function projectCost(project: projects, resourcePrices: resourceP
         if (!resourcePrices[key]) throw new Error(`PnwKit: missing resource: ${key}`);
     }
 
-    let percentage = 100 - (TA && GSA ? 7.5 : (TA ? 5 : 0));
+    let percentage = 100 - ((TA && GSA) ? 7.5 : (TA ? 5 : 0));
     let price = 0;
 
     switch (project) {

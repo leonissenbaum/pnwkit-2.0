@@ -27,10 +27,7 @@ export default function cityCost(startingCity: number, endingCity: number, UP: b
         aluminum: 0,
     }
 
-    let percentage = 0;
-
-    MD ? percentage += 5 : 0;
-    GSA ? percentage += 2.5 : 0;
+    let percentage = 100 - ((MD && GSA) ? 5 : (MD ?  2.5 : 0));
 
     for (let i = startingCity; i < endingCity; i++) {
         let formula = 0;
@@ -75,11 +72,10 @@ export default function cityCost(startingCity: number, endingCity: number, UP: b
     */
 
     let costs = 0;
-    let percentage = (MD && GSA) ? 5 : (MD ?  2.5 : 0);
+    let percentage = 100 - ((MD && GSA) ? 5 : (MD ? 2.5 : 0));
 
     for (let i = startingCity; i < endingCity; i++) {
         let formula = 0;
-        let cityPercent = 0;
 
         if (i >= 21 && MP)
             formula = (50000 * (i - 1) ^ 3 + 150000 * i + 75000) - 250000000;
@@ -88,7 +84,7 @@ export default function cityCost(startingCity: number, endingCity: number, UP: b
         else if (i >= 11 && UP)
             formula = (50000 * (i - 1) ^ 3 + 150000 * i + 75000) - 50000000;
 
-        costs += formula - getPercentage(formula, (percentage + cityPercent));
+        costs += formula - getPercentage(formula, percentage);
     }
 
     return costs;

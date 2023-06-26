@@ -6,5 +6,5 @@
  * @returns {number} How much food you consume in a day
  */
 export default function foodConsumption(basePopulation: number, cityAge: number, cities: number) {
-    return ((basePopulation) ^ 2 / 125000000 + ((basePopulation) * (1 + Math.log(cityAge) / 15) - basePopulation) / 850) * cities;
+    return (((basePopulation) ** 2) / 125000000 + ((basePopulation) * (1 + Math.log(cityAge) / 15) - basePopulation) / 850) * cities;
 }
