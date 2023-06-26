@@ -1,6 +1,6 @@
 {
   "name": "pnwkit-2.0",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "the reincarnation of pnwkit by BSNK",
   "main": "build/src/index.js",
   "module": "build/src/index.js",
