@@ -1,7 +1,7 @@
 import { foodProductionSeasons } from "../../interfaces/data/econ";
 
 /**
- * Get the cost of cities
+ * Get how much food you make
  * @param {number} cities How many cities you have
  * @param {number} farms How many farms you have per city
  * @param {boolean} land How much land you have per city

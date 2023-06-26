@@ -12,6 +12,7 @@ import espionageOdds from './war/espionageOdds';
 import { groundBattle, airBattle, seaBattle } from './war/battleSimulations';
 import { pollution, pollutionIndex, crime, disease } from './econ/cityEffects';
 import projectCost from './econ/projectCost';
+import cityIncome from './econ/income';
 
 export default class PnwKitUtils {
     getPercentage = getPercentage;
@@ -33,4 +34,5 @@ export default class PnwKitUtils {
     crime = crime;
     disease = disease;
     projectCost = projectCost;
+    cityIncome = cityIncome;
 }
