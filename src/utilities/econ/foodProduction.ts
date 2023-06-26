@@ -10,7 +10,6 @@ import { foodProductionSeasons } from "../../interfaces/data/econ";
  * @param {number} radiation What your radiation is right now
  * @returns {number} How much food you produce a day
  */
-export default function foodProduction(cities: number, farms: number, land: number, MI: boolean, season: foodProductionSeasons, radiation: number) {
-
-    return(farms * land / (MI ? 400 : 500)) * season * radiation * cities * 12;
+export default function foodProduction(cities: number, farms: number, land: number, MI: boolean, season: foodProductionSeasons, radiationIndex: number) {
+    return (farms * land / (MI ? 400 : 500)) * season * radiationIndex * cities * 12;
 }

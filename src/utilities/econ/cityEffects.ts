@@ -10,8 +10,7 @@ import getPercentage from "../other/getPercentage";
  * @returns {number} How much disease is in the city
  */
 export function disease(infra: number, land: number, hospitals: number, pollution: number, CRC: boolean): number {
-
-    return CRC ? ((0.01 * ((infra * 100) / (land + 0.001) ** 2) - 25) / 100) + (infra / 1000) - (hospitals * 3.5) + (pollution * 0.05) : ((0.01 * ((infra * 100) / (land + 0.001) ** 2) - 25) / 100) + (infra / 1000) - (hospitals * 2.5) + (pollution * 0.05);
+    return ((0.01 * (((infra * 100) / (land + 0.001)) ** 2) - 25) / 100) + (infra / 1000) - (hospitals * (CRC ? 3.5 : 2.5)) + (pollution * 0.05);
 }
 
 /**
@@ -23,7 +22,7 @@ export function disease(infra: number, land: number, hospitals: number, pollutio
  * @returns {number} How much crime is in the city
  */
 export function crime(commerce: number, infra: number, policeStations: number, SPTP: boolean): number {
-    return SPTP ? (((103 - commerce) ** 2 + (infra * 100)) / (111111) - (policeStations) * (3.5)) : (((103 - commerce) ** 2 + (infra * 100)) / (111111) - (policeStations) * (2.5));
+    return (((103 - commerce) ** 2) + (infra * 100)) / (111111) - (policeStations * (SPTP ? 3.5 : 2.5));
 }
 
 /**
@@ -83,12 +82,22 @@ export function pollutionIndex(
     GT: boolean,
     RI: boolean
 ): number {
-
     let powerPollution = (coalPowerPlants * 8) + (oilPowerPlants * 6);
-    let minePollution = GT ? ((coalMines + oilWells + ironMines + bauxiteMines + leadMines) * 2) + (uraniumMines * 20) + farms : ((coalMines + oilWells + ironMines + bauxiteMines + leadMines) * 2) + (uraniumMines * 20) + (farms * 2);
+    let minePollution = ((coalMines + oilWells + ironMines + bauxiteMines + leadMines) * 2) + (uraniumMines * 20) + (farms * (GT ? 1 : 2));
     let manuPollution = GT ? getPercentage((steelMills * 40) + (aluminumRefineries * 40) + (munitionsFactories * 32), 75) : (oilRefineries * 32) + (steelMills * 40) + (aluminumRefineries * 40) + (munitionsFactories * 32);
-    let civilPollution = RI ? ((policeStations + (hospitals * 4) - (recyclingCenters * 75)) - (GT ? (subways * 70) : (subways * 45))) : ((policeStations + (hospitals * 4) - (recyclingCenters * 70)) - (GT ? (subways * 70) : (subways * 45)));
+    let civilPollution = ((policeStations + (hospitals * 4) - (recyclingCenters * (RI ? 75 : 70))) - (subways * (GT ? 70 : 45)));
     let commercePollution = (shoppingMalls * 2) + (stadiums * 5);
 
     return powerPollution + minePollution + manuPollution + civilPollution + commercePollution;
+}
+
+/**
+ * Gets the population of a city
+ * @param {number} infra How the infra the city has
+ * @param {number} disease How much disease is in the city
+ * @param {number} crime How much crime is in the city
+ * @returns {number} How much the city population is
+ */
+export function population(infra: number, disease: number, crime: number): number {
+    return (infra * 100) - ((disease * 100 * infra) / 100) - Math.max((crime / 10) * (100 * infra) - 25, 0);
 }

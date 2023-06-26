@@ -75,10 +75,7 @@ export default function cityCost(startingCity: number, endingCity: number, UP: b
     */
 
     let costs = 0;
-    let percentage = 0;
-
-    MD ? percentage += 5 : 0;
-    GSA ? percentage += 2.5 : 0;
+    let percentage = (MD && GSA) ? 5 : (MD ?  2.5 : 0);
 
     for (let i = startingCity; i < endingCity; i++) {
         let formula = 0;
