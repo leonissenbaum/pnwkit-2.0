@@ -40,6 +40,14 @@ export default function espionageOdds(safetyLevel: number, operation: operationT
         case operationType.ASSASSINATESPIES:
             odds = odds / 1.5;
             break;
+
+        case operationType.SOLDIERS:
+            odds = odds / 1;
+            break;
+
+        case operationType.TERRORIZECIVILIANS:
+            odds = odds / 1;
+            break;
     }
 
     return odds;

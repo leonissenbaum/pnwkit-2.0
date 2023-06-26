@@ -1,11 +1,13 @@
 export enum operationType {
+    GATHERINTELLIGENCE = 'intel',
+    TERRORIZECIVILIANS = 'civilians',
+    SOLDIERS = 'soldiers',
     TANKS = 'tanks',
     AIRCRAFT = 'aircraft',
     SHIPS = 'ships',
+    ASSASSINATESPIES = 'spies',
     MISSILES = 'missiles',
     NUKES = 'nukes',
-    GATHERINTELLIGENCE = 'gatherIntelligence',
-    ASSASSINATESPIES = 'assassinateSpies',
 }
 
 export type spyRanges = {
