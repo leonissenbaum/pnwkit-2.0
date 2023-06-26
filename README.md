@@ -44,7 +44,8 @@ pnwkit.setKeys('api key');
 
     const subscriptionChannel = await pnwkit.bankRecSubscription(
       subscriptionEvent.CREATE,
-      test, { receiver_id: [619] }
+      test, 
+      { receiver_id: [619] }
     );
 
     console.log(subscriptionChannel.subscribed);
