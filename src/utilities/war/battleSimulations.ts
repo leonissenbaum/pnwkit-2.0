@@ -11,8 +11,10 @@ import getPercentage from "../other/getPercentage";
  * @returns {groundBattleData} ground battle results
  */
 export function groundBattle(attackingSoldiers: number, attackingTanks: number, defendingSoldiers: number, defendingTanks: number): groundBattleData {
-    let attackingValue = attackingSoldiers * 1.75 + attackingTanks * 40;
-    let defendingValue = defendingSoldiers * 1.75 + defendingTanks * 40;
+    let attackingSoldierValue = attackingSoldiers * 1.75;
+    let attackingTankValue = attackingTanks * 40;
+    let defendingSoldierValue = attackingSoldiers * 1.75;
+    let defendingTankValue = attackingTanks * 40;
 
     let results = {
         odds: {
@@ -41,51 +43,45 @@ export function groundBattle(attackingSoldiers: number, attackingTanks: number, 
         let wins = 0;
 
         for (let j = 0; j < 3; j++) {
-            let attackingRoll = getPercentage(attackingValue, Math.floor(Math.random() * 60) + 40);
-            let defendingRoll = getPercentage(defendingValue, Math.floor(Math.random() * 60) + 40);
+            let attackingRoll = getPercentage((attackingSoldierValue + attackingTankValue), Math.floor(Math.random() * 60) + 40);
+            let defendingRoll = getPercentage((defendingSoldierValue + defendingTankValue), Math.floor(Math.random() * 60) + 40);
 
             if (attackingRoll > defendingRoll) {
                 wins++;
 
-                results.attacker.tankCasualties += (defendingSoldiers * 0.0004060606) + (defendingTanks * 0.00066666666);
-                results.defender.tankCasualties += (attackingSoldiers * 0.00043225806) + (attackingTanks * 0.00070967741);
+                results.attacker.tankCasualties += (defendingSoldierValue * 0.0004060606) + (defendingTankValue * 0.00066666666);
+                results.defender.tankCasualties += (attackingSoldierValue * 0.00043225806) + (attackingTankValue * 0.00070967741);
             }
             else {
 
-                results.attacker.tankCasualties += (defendingSoldiers * 0.00043225806) + (defendingTanks * 0.00070967741);
-                results.defender.tankCasualties += (attackingSoldiers * 0.0004060606) + (attackingTanks * 0.00066666666);
+                results.attacker.tankCasualties += (defendingSoldierValue * 0.00043225806) + (defendingTankValue * 0.00070967741);
+                results.defender.tankCasualties += (attackingSoldierValue * 0.0004060606) + (attackingTankValue * 0.00066666666);
             }
 
-            results.attacker.soldierCasualties += (defendingSoldiers * 0.0084) + (defendingTanks * 0.0092);
-            results.defender.soldierCasualties += (attackingSoldiers * 0.0084) + (attackingTanks * 0.0092);
+            results.attacker.soldierCasualties += (defendingSoldierValue * 0.0084) + (defendingTankValue * 0.0092);
+            results.defender.soldierCasualties += (attackingSoldierValue * 0.0084) + (attackingTankValue * 0.0092);
         }
 
         results.attacker.munitionsConsumed += accurateRounding(attackingSoldiers * 0.0002 + attackingTanks * 0.01, 2);
         results.attacker.gasConsumed += accurateRounding(attackingTanks * 0.01, 2);
+        results.defender.munitionsConsumed += accurateRounding(defendingSoldiers * 0.0002 + defendingTanks * 0.01, 2);
+        results.defender.gasConsumed += accurateRounding(defendingTanks * 0.01, 2);
 
         switch (wins) {
             case 0:
                 results.odds.UF++;
-                results.defender.munitionsConsumed += accurateRounding((defendingSoldiers * 0.0002 + defendingTanks * 0.01) * 0.4, 2);
-                results.defender.gasConsumed += accurateRounding(defendingTanks * 0.4, 2);
                 break;
 
             case 1:
                 results.odds.PV++;
-                results.defender.munitionsConsumed += accurateRounding((defendingSoldiers * 0.0002 + defendingTanks * 0.01) * 0.7, 2);
-                results.defender.gasConsumed += accurateRounding(defendingTanks * 0.7, 2);
                 break;
 
             case 2:
                 results.odds.MS++;
-                results.defender.munitionsConsumed += accurateRounding((defendingSoldiers * 0.0002 + defendingTanks * 0.01) * 0.9, 2);
-                results.defender.gasConsumed += accurateRounding(defendingTanks * 0.9, 2);
                 break;
 
             case 3:
                 results.odds.IT++;
-                results.defender.munitionsConsumed += accurateRounding(defendingSoldiers * 0.0002 + defendingTanks * 0.01, 2);
-                results.defender.gasConsumed += accurateRounding(defendingTanks * 0.01, 2);
                 break;
         }
     }
@@ -95,6 +91,7 @@ export function groundBattle(attackingSoldiers: number, attackingTanks: number, 
     results.attacker.tankCasualties /= 100;
     results.attacker.gasConsumed /= 100;
     results.attacker.munitionsConsumed /= 100;
+
     results.defender.soldierCasualties /= 100;
     results.defender.steelConsumed = (results.defender.tankCasualties * 0.5) / 100;
     results.defender.tankCasualties /= 100;
@@ -188,7 +185,7 @@ export function airBattle(attackingAircraft: number, defendingAircraft: number, 
     results.attacker.munitionsConsumed /= 100;
 
 
-    results.defender.aluminumConsumed = (results.attacker.aircraftCasualties * 5) / 100;
+    results.defender.aluminumConsumed = (results.defender.aircraftCasualties * 5) / 100;
     results.defender.aircraftCasualties /= 100;
     results.defender.gasConsumed /= 100;
     results.defender.munitionsConsumed /= 100;
@@ -273,7 +270,7 @@ export function seaBattle(attackingShips: number, defendingShips: number): seaBa
     results.attacker.munitionsConsumed /= 100;
 
 
-    results.defender.steelConsumed = (results.attacker.shipCasualties * 30) / 100;
+    results.defender.steelConsumed = (results.defender.shipCasualties * 30) / 100;
     results.defender.shipCasualties /= 100;
     results.defender.gasConsumed /= 100;
     results.defender.munitionsConsumed /= 100;
