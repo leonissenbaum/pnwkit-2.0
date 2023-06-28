@@ -72,17 +72,19 @@ export default function cityCost(startingCity: number, endingCity: number, UP: b
     */
 
     let costs = 0;
-    let percentage = 100 - ((MD && GSA) ? 5 : (MD ? 2.5 : 0));
+    let percentage = ((MD && GSA) ? 7.5 : (MD ? 5 : 0));
 
     for (let i = startingCity; i < endingCity; i++) {
         let formula = 0;
 
         if (i >= 21 && MP)
-            formula = (50000 * (i - 1) ^ 3 + 150000 * i + 75000) - 250000000;
+            formula = (50000 * Math.pow((i - 1), 3) + 150000 * i + 75000) - 250000000;
         else if (i >= 16 && AUP)
-            formula = (50000 * (i - 1) ^ 3 + 150000 * i + 75000) - 150000000;
+            formula = (50000 * Math.pow((i - 1), 3) + 150000 * i + 75000) - 150000000;
         else if (i >= 11 && UP)
-            formula = (50000 * (i - 1) ^ 3 + 150000 * i + 75000) - 50000000;
+            formula = (50000 * Math.pow((i - 1), 3) + 150000 * i + 75000) - 50000000;
+        else
+            formula = (50000 * Math.pow((i - 1), 3) + 150000 * i + 75000)
 
         costs += formula - getPercentage(formula, percentage);
     }

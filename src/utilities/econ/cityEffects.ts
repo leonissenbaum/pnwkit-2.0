@@ -83,7 +83,7 @@ export function pollutionIndex(
     RI: boolean
 ): number {
     let powerPollution = (coalPowerPlants * 8) + (oilPowerPlants * 6);
-    let minePollution = ((coalMines + oilWells + ironMines + bauxiteMines + leadMines) * 2) + (uraniumMines * 20) + (farms * (GT ? 1 : 2));
+    let minePollution = ((coalMines + oilWells + ironMines + bauxiteMines + leadMines) * 12) + (uraniumMines * 20) + (farms * (GT ? 1 : 2));
     let manuPollution = GT ? getPercentage((steelMills * 40) + (aluminumRefineries * 40) + (munitionsFactories * 32), 75) : (oilRefineries * 32) + (steelMills * 40) + (aluminumRefineries * 40) + (munitionsFactories * 32);
     let civilPollution = ((policeStations + (hospitals * 4) - (recyclingCenters * (RI ? 75 : 70))) - (subways * (GT ? 70 : 45)));
     let commercePollution = (shoppingMalls * 2) + (stadiums * 5);
