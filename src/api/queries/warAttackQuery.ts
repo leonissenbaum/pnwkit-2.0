@@ -34,7 +34,9 @@ export default async function warAttackQuery(
     const res = await GraphQL.makeCall(`
     {
       warattacks${argsToParameters} {
+      data {
         ${query}
+        }
       }
     }
   `, this.apiKey);
