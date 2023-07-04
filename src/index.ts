@@ -68,7 +68,7 @@ for (const [key] of Object.entries(kit)) {
     exports[key] = kit[key];
 }
 
-exports.setKey = kit.setKeys;
+exports.setKeys = kit.setKeys;
 exports.cached = kit.cached;
 exports.setRateLimit = kit.setRateLimit;
 
