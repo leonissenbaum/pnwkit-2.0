@@ -9,11 +9,13 @@ import { mutationProposeTreatyArgs } from "./mutations/proposeTreaty";
 import { queryActivityStatsArgs } from "./queries/activityStat";
 import { queryAlliancesArgs } from "./queries/alliance";
 import { queryBankrecsArgs } from "./queries/bank";
+import { queryBannedNationArgs } from "./queries/bannedNation";
 import { queryBaseballGamesArgs, queryBaseballPlayersArgs, queryBaseballTeamsArgs } from "./queries/baseball";
 import { queryBountiesArgs } from "./queries/bounty";
 import { queryCitiesArgs } from "./queries/city";
 import { queryEmbargoesArgs } from "./queries/embargo";
 import { queryNationsArgs } from "./queries/nation";
+import { queryNationResourceStatsArgs } from "./queries/nationResourceStat";
 import { queryResourceStatsArgs } from "./queries/resourceStat";
 import { queryTradesArgs } from "./queries/trade";
 import { queryTradepricesArgs } from "./queries/tradePrice";
@@ -40,6 +42,8 @@ export type anyCall =
     queryTreatiesArgs |
     queryWarattacksArgs |
     queryWarsArgs |
+    queryBannedNationArgs |
+    queryNationResourceStatsArgs |
     mutationbankDepositArgs |
     mutationBankWithdrawArgs |
     mutationApproveTreatyArgs |
