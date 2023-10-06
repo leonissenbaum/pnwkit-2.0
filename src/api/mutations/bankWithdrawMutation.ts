@@ -4,21 +4,21 @@ import { bankrec } from '../../interfaces/queries/bank';
 import GraphQL from '../../services/GraphQL';
 
 export interface Parameters {
-    receiver: number;
-    receiver_type: number;
-    money?: number;
-    coal?: number;
-    oil?: number;
-    uranium?: number;
-    iron?: number;
-    bauxite?: number;
-    lead?: number;
-    gasoline?: number;
-    munitions?: number;
-    steel?: number;
-    aluminum?: number;
-    food?: number;
-    note?: string;
+  receiver: number;
+  receiver_type: number;
+  money?: number;
+  coal?: number;
+  oil?: number;
+  uranium?: number;
+  iron?: number;
+  bauxite?: number;
+  lead?: number;
+  gasoline?: number;
+  munitions?: number;
+  steel?: number;
+  aluminum?: number;
+  food?: number;
+  note?: string;
 }
 
 /**
@@ -28,21 +28,22 @@ export interface Parameters {
  * @param {boolean} paginator If true it will return paginator info
  * @return {Promise<bankrec | bankWithdrawPaginator>}
  */
-export default async function bankWithdrawMutation(this: Kit, params: Parameters, query: string, paginator?: false): Promise<bankrec>;
-export default async function bankWithdrawMutation(this: Kit, params: Parameters, query: string, paginator: true): Promise<bankWithdrawPaginator>;
+export default async function bankWithdrawMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator?: false): Promise<bankrec>;
+export default async function bankWithdrawMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator: true): Promise<bankWithdrawPaginator>;
 export default async function bankWithdrawMutation(
-    this: Kit,
-    params: Parameters,
-    query: string,
-    paginator?: boolean,
+  this: Kit,
+  params: Parameters,
+  query: string,
+  apiKey: string,
+  paginator?: boolean,
 ): Promise<bankrec | bankWithdrawPaginator> {
-    const argsToParameters = GraphQL.generateParameters(params as mutationBankWithdrawArgs);
+  const argsToParameters = GraphQL.generateParameters(params as mutationBankWithdrawArgs);
 
-    const res = await GraphQL.makeMutationCall(`
+  const res = await GraphQL.makeMutationCall(`
     mutation {
        bankWithdraw${argsToParameters} {
        ${(paginator) ?
-            `
+      `
           paginatorInfo {
             count,
             currentPage,
@@ -54,22 +55,22 @@ export default async function bankWithdrawMutation(
             total
           },
           `: ''
-        }
+    }
         
         ${query}
         
       }
     }
   `,
-        this.apiKey,
-        this.botKey,
-    );
+    apiKey,
+    this.botKey,
+  );
 
-    this.setRateLimit(res.rateLimit);
+  this.setRateLimit(res.rateLimit);
 
-    if (paginator) {
-        return res.data.bankWithdraw as bankWithdrawPaginator;
-    }
+  if (paginator)
+    return res.data.bankWithdraw as bankWithdrawPaginator;
 
-    return res.data.bankWithdraw as bankrec;
+
+  return res.data.bankWithdraw as bankrec;
 }

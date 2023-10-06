@@ -4,19 +4,19 @@ import { bankrec } from '../../interfaces/queries/bank';
 import GraphQL from '../../services/GraphQL';
 
 export interface Parameters {
-    money?: number;
-    coal?: number;
-    oil?: number;
-    uranium?: number;
-    iron?: number;
-    bauxite?: number;
-    lead?: number;
-    gasoline?: number;
-    munitions?: number;
-    steel?: number;
-    aluminum?: number;
-    food?: number;
-    note?: string;
+  money?: number;
+  coal?: number;
+  oil?: number;
+  uranium?: number;
+  iron?: number;
+  bauxite?: number;
+  lead?: number;
+  gasoline?: number;
+  munitions?: number;
+  steel?: number;
+  aluminum?: number;
+  food?: number;
+  note?: string;
 }
 
 /**
@@ -26,21 +26,22 @@ export interface Parameters {
  * @param {boolean} paginator If true it will return paginator info
  * @return {Promise<bankrec | bankDepositPaginator>}
  */
-export default async function bankDepositMutation(this: Kit, params: Parameters, query: string, paginator?: false): Promise<bankrec>;
-export default async function bankDepositMutation(this: Kit, params: Parameters, query: string, paginator: true): Promise<bankDepositPaginator>;
+export default async function bankDepositMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator?: false): Promise<bankrec>;
+export default async function bankDepositMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator: true): Promise<bankDepositPaginator>;
 export default async function bankDepositMutation(
-    this: Kit,
-    params: Parameters,
-    query: string,
-    paginator?: boolean,
+  this: Kit,
+  params: Parameters,
+  query: string,
+  apiKey: string,
+  paginator?: boolean,
 ): Promise<bankrec | bankDepositPaginator> {
-    const argsToParameters = GraphQL.generateParameters(params as mutationbankDepositArgs);
+  const argsToParameters = GraphQL.generateParameters(params as mutationbankDepositArgs);
 
-    const res = await GraphQL.makeMutationCall(`
+  const res = await GraphQL.makeMutationCall(`
     mutation {
        bankDeposit${argsToParameters} {
        ${(paginator) ?
-            `
+      `
           paginatorInfo {
             count,
             currentPage,
@@ -52,22 +53,22 @@ export default async function bankDepositMutation(
             total
           },
           `: ''
-        }
+    }
         
         ${query}
         
       }
     }
   `,
-        this.apiKey,
-        this.botKey,
-    );
+    apiKey,
+    this.botKey,
+  );
 
-    this.setRateLimit(res.rateLimit);
+  this.setRateLimit(res.rateLimit);
 
-    if (paginator) {
-        return res.data.bankDeposit as bankDepositPaginator;
-    }
+  if (paginator)
+    return res.data.bankDeposit as bankDepositPaginator;
 
-    return res.data.bankDeposit as bankrec;
+
+  return res.data.bankDeposit as bankrec;
 }

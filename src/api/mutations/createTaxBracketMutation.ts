@@ -4,9 +4,9 @@ import { taxBracket } from '../../interfaces/queries/bank';
 import GraphQL from '../../services/GraphQL';
 
 export interface Parameters {
-    name: string;
-    money_tax_rate: number;
-    resource_tax_rate: number;
+  name: string;
+  money_tax_rate: number;
+  resource_tax_rate: number;
 }
 
 /**
@@ -16,21 +16,22 @@ export interface Parameters {
  * @param {boolean} paginator If true it will return paginator info
  * @return {Promise<TaxBracket | createTaxBracketPaginator>}
  */
-export default async function createTaxBracketMutation(this: Kit, params: Parameters, query: string, paginator?: false): Promise<taxBracket>;
-export default async function createTaxBracketMutation(this: Kit, params: Parameters, query: string, paginator: true): Promise<createTaxBracketPaginator>;
+export default async function createTaxBracketMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator?: false): Promise<taxBracket>;
+export default async function createTaxBracketMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator: true): Promise<createTaxBracketPaginator>;
 export default async function createTaxBracketMutation(
-    this: Kit,
-    params: Parameters,
-    query: string,
-    paginator?: boolean,
+  this: Kit,
+  params: Parameters,
+  query: string,
+  apiKey: string,
+  paginator?: boolean,
 ): Promise<taxBracket | createTaxBracketPaginator> {
-    const argsToParameters = GraphQL.generateParameters(params as mutationCreateTaxBracketArgs);
+  const argsToParameters = GraphQL.generateParameters(params as mutationCreateTaxBracketArgs);
 
-    const res = await GraphQL.makeMutationCall(`
+  const res = await GraphQL.makeMutationCall(`
     mutation {
         createTaxBracket${argsToParameters} {
        ${(paginator) ?
-            `
+      `
           paginatorInfo {
             count,
             currentPage,
@@ -42,22 +43,22 @@ export default async function createTaxBracketMutation(
             total
           },
           `: ''
-        }
+    }
         
         ${query}
         
       }
     }
   `,
-        this.apiKey,
-        this.botKey,
-    );
+    apiKey,
+    this.botKey,
+  );
 
-    this.setRateLimit(res.rateLimit);
+  this.setRateLimit(res.rateLimit);
 
-    if (paginator) {
-        return res.data.createTaxBracket as createTaxBracketPaginator;
-    }
+  if (paginator)
+    return res.data.createTaxBracket as createTaxBracketPaginator;
 
-    return res.data.createTaxBracket as taxBracket;
+
+  return res.data.createTaxBracket as taxBracket;
 }

@@ -25,7 +25,7 @@ export class Kit extends PnwKitAPI {
      * @param {string} apiKey
      * @param {string} botKey
      */
-    setKeys(apiKey: string, botKey?: string): void {
+    setApiKey(apiKey: string, botKey?: string): void {
         this.apiKey = apiKey;
 
         if (botKey)

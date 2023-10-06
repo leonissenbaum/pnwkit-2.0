@@ -4,7 +4,7 @@ import { taxBracket } from '../../interfaces/queries/bank';
 import GraphQL from '../../services/GraphQL';
 
 export interface Parameters {
-    id: number;
+  id: number;
 }
 
 /**
@@ -14,21 +14,22 @@ export interface Parameters {
  * @param {boolean} paginator If true it will return paginator info
  * @return {Promise<taxBracket | deleteTaxBracketPaginator>}
  */
-export default async function deleteTaxBracketMutation(this: Kit, params: Parameters, query: string, paginator?: false): Promise<taxBracket>;
-export default async function deleteTaxBracketMutation(this: Kit, params: Parameters, query: string, paginator: true): Promise<deleteTaxBracketPaginator>;
+export default async function deleteTaxBracketMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator?: false): Promise<taxBracket>;
+export default async function deleteTaxBracketMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator: true): Promise<deleteTaxBracketPaginator>;
 export default async function deleteTaxBracketMutation(
-    this: Kit,
-    params: Parameters,
-    query: string,
-    paginator?: boolean,
+  this: Kit,
+  params: Parameters,
+  query: string,
+  apiKey: string,
+  paginator?: boolean,
 ): Promise<taxBracket | deleteTaxBracketPaginator> {
-    const argsToParameters = GraphQL.generateParameters(params as mutationDeleteTaxBracketArgs);
+  const argsToParameters = GraphQL.generateParameters(params as mutationDeleteTaxBracketArgs);
 
-    const res = await GraphQL.makeMutationCall(`
+  const res = await GraphQL.makeMutationCall(`
     mutation {
         deleteTaxBracket${argsToParameters} {
        ${(paginator) ?
-            `
+      `
           paginatorInfo {
             count,
             currentPage,
@@ -40,22 +41,22 @@ export default async function deleteTaxBracketMutation(
             total
           },
           `: ''
-        }
+    }
         
         ${query}
         
       }
     }
   `,
-        this.apiKey,
-        this.botKey,
-    );
+    apiKey,
+    this.botKey,
+  );
 
-    this.setRateLimit(res.rateLimit);
+  this.setRateLimit(res.rateLimit);
 
-    if (paginator) {
-        return res.data.deleteTaxBracket as deleteTaxBracketPaginator;
-    }
+  if (paginator)
+    return res.data.deleteTaxBracket as deleteTaxBracketPaginator;
 
-    return res.data.deleteTaxBracket as taxBracket;
+
+  return res.data.deleteTaxBracket as taxBracket;
 }

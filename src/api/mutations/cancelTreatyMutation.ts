@@ -4,7 +4,7 @@ import { treaty } from '../../interfaces/queries/treaty';
 import GraphQL from '../../services/GraphQL';
 
 export interface Parameters {
-    id: string;
+  id: string;
 }
 
 /**
@@ -14,21 +14,22 @@ export interface Parameters {
  * @param {boolean} paginator If true it will return paginator info
  * @return {Promise<treaty | cancelTreatyPaginator>}
  */
-export default async function cancelTreatyMutation(this: Kit, params: Parameters, query: string, paginator?: false): Promise<treaty>;
-export default async function cancelTreatyMutation(this: Kit, params: Parameters, query: string, paginator: true): Promise<cancelTreatyPaginator>;
+export default async function cancelTreatyMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator?: false): Promise<treaty>;
+export default async function cancelTreatyMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator: true): Promise<cancelTreatyPaginator>;
 export default async function cancelTreatyMutation(
-    this: Kit,
-    params: Parameters,
-    query: string,
-    paginator?: boolean,
+  this: Kit,
+  params: Parameters,
+  query: string,
+  apiKey: string,
+  paginator?: boolean,
 ): Promise<treaty | cancelTreatyPaginator> {
-    const argsToParameters = GraphQL.generateParameters(params as mutationCancelTreatyArgs);
+  const argsToParameters = GraphQL.generateParameters(params as mutationCancelTreatyArgs);
 
-    const res = await GraphQL.makeMutationCall(`
+  const res = await GraphQL.makeMutationCall(`
     mutation {
         cancelTreaty${argsToParameters} {
        ${(paginator) ?
-            `
+      `
           paginatorInfo {
             count,
             currentPage,
@@ -40,22 +41,22 @@ export default async function cancelTreatyMutation(
             total
           },
           `: ''
-        }
+    }
 
         ${query}
 
       }
     }
   `,
-        this.apiKey,
-        this.botKey,
-    );
+    apiKey,
+    this.botKey,
+  );
 
-    this.setRateLimit(res.rateLimit);
+  this.setRateLimit(res.rateLimit);
 
-    if (paginator) {
-        return res.data.cancelTreaty as cancelTreatyPaginator;
-    }
+  if (paginator)
+    return res.data.cancelTreaty as cancelTreatyPaginator;
 
-    return res.data.cancelTreaty as treaty;
+
+  return res.data.cancelTreaty as treaty;
 }

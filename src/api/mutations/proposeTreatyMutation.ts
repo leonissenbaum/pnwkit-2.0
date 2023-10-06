@@ -4,10 +4,10 @@ import { treaty } from '../../interfaces/queries/treaty';
 import GraphQL from '../../services/GraphQL';
 
 export interface Parameters {
-    alliance_id: string;
-    length: number;
-    type: string;
-    url: string
+  alliance_id: string;
+  length: number;
+  type: string;
+  url: string
 }
 
 /**
@@ -17,21 +17,22 @@ export interface Parameters {
  * @param {boolean} paginator If true it will return paginator info
  * @return {Promise<treaty | proposeTreatyPaginator>}
  */
-export default async function proposeTreatyMutation(this: Kit, params: Parameters, query: string, paginator?: false): Promise<treaty>;
-export default async function proposeTreatyMutation(this: Kit, params: Parameters, query: string, paginator: true): Promise<proposeTreatyPaginator>;
+export default async function proposeTreatyMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator?: false): Promise<treaty>;
+export default async function proposeTreatyMutation(this: Kit, params: Parameters, query: string, apiKey: string, paginator: true): Promise<proposeTreatyPaginator>;
 export default async function proposeTreatyMutation(
-    this: Kit,
-    params: Parameters,
-    query: string,
-    paginator?: boolean,
+  this: Kit,
+  params: Parameters,
+  query: string,
+  apiKey: string,
+  paginator?: boolean,
 ): Promise<treaty | proposeTreatyPaginator> {
-    const argsToParameters = GraphQL.generateParameters(params as mutationProposeTreatyArgs);
+  const argsToParameters = GraphQL.generateParameters(params as mutationProposeTreatyArgs);
 
-    const res = await GraphQL.makeMutationCall(`
+  const res = await GraphQL.makeMutationCall(`
     mutation {
         proposeTreaty${argsToParameters} {
        ${(paginator) ?
-            `
+      `
           paginatorInfo {
             count,
             currentPage,
@@ -43,22 +44,22 @@ export default async function proposeTreatyMutation(
             total
           },
           `: ''
-        }
+    }
          
         ${query}
         
       }
     }
   `,
-        this.apiKey,
-        this.botKey,
-    );
+    apiKey,
+    this.botKey,
+  );
 
-    this.setRateLimit(res.rateLimit);
+  this.setRateLimit(res.rateLimit);
 
-    if (paginator) {
-        return res.data.proposeTreaty as proposeTreatyPaginator;
-    }
+  if (paginator)
+    return res.data.proposeTreaty as proposeTreatyPaginator;
 
-    return res.data.proposeTreaty as treaty;
+
+  return res.data.proposeTreaty as treaty;
 }
