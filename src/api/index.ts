@@ -46,6 +46,7 @@ import proposeTreatyMutation from "./mutations/proposeTreatyMutation";
 import sendMessage from "./v2/sendMessage";
 import bannedNationQuery from "./queries/bannedNationQuery";
 import nationResourceStatQuery from "./queries/nationResourceStatQuery";
+import customQuery from "./queries/customQuery";
 
 
 export default class PnwKitAPI {
@@ -72,6 +73,7 @@ export default class PnwKitAPI {
     topTradeInfoQuery = topTradeInfoQuery;
     bannedNationQuery = bannedNationQuery;
     nationResourceStatQuery = nationResourceStatQuery;
+    customQuery = customQuery;
     alliancePositionSubscription = alliancePositionSubscription;
     allianceSubscription = allianceSubscription;
     bankRecSubscription = bankRecSubscription;
