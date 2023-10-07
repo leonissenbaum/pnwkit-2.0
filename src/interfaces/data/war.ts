@@ -106,3 +106,27 @@ export type seaBattleData = {
         munitionsConsumed: number;
     }
 }
+
+export type MMR = {
+    totalBarracks: number;
+    totalFactories: number;
+    totalHangars: number;
+    totalDrydocks: number;
+}
+
+export type tiering = {
+    10: number;
+    11: number;
+    13: number;
+    15: number;
+    17: number;
+    19: number;
+    21: number;
+    24: number;
+    27: number;
+    31: number;
+    35: number;
+    40: number;
+    45: number;
+    50: number;
+}

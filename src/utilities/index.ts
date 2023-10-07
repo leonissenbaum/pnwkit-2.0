@@ -13,6 +13,9 @@ import { groundBattle, airBattle, seaBattle } from './war/battleSimulations';
 import { pollution, pollutionIndex, crime, disease } from './econ/cityEffects';
 import projectCost from './econ/projectCost';
 import cityIncome from './econ/income';
+import allianceMMR from './war/allianceMMR';
+import nationMMR from './war/nationMMR';
+import sphereTiering from './war/sphereTiering';
 
 export default class PnwKitUtils {
     getPercentage = getPercentage;
@@ -35,4 +38,7 @@ export default class PnwKitUtils {
     disease = disease;
     projectCost = projectCost;
     cityIncome = cityIncome;
+    allianceMMR = allianceMMR;
+    nationMMR = nationMMR;
+    sphereTiering = sphereTiering;
 }
