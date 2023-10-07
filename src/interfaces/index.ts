@@ -1,3 +1,4 @@
+import { mutationDeclinePersonalTradeArgs, mutationacceptPersonalTradeArgs } from "./mutations/personalTrade";
 import { mutationApproveTreatyArgs } from "./mutations/approveTreaty";
 import { mutationAssignTaxBracketArgs } from "./mutations/assignTaxBracket";
 import { mutationbankDepositArgs } from "./mutations/bankDeposit";
@@ -23,6 +24,7 @@ import { queryTreasureTradesArgs } from "./queries/treasureTrade";
 import { queryTreatiesArgs } from "./queries/treaty";
 import { queryWarsArgs } from "./queries/war";
 import { queryWarattacksArgs } from "./queries/warAttack";
+import { mutationAssignAlliancePositionArgs, mutationCreateAlliancePositionArgs, mutationDeleteAlliancePositionArgs } from "./mutations/alliancePosition";
 
 export type anyCall =
     queryActivityStatsArgs |
@@ -51,7 +53,12 @@ export type anyCall =
     mutationAssignTaxBracketArgs |
     mutationCreateTaxBracketArgs |
     mutationDeleteTaxBracketArgs |
-    mutationProposeTreatyArgs;
+    mutationProposeTreatyArgs |
+    mutationacceptPersonalTradeArgs |
+    mutationDeclinePersonalTradeArgs |
+    mutationAssignAlliancePositionArgs |
+    mutationCreateAlliancePositionArgs |
+    mutationDeleteAlliancePositionArgs;
 
 export type Maybe<T> = T | null;
 

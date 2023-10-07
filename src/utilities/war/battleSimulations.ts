@@ -239,11 +239,11 @@ export function seaBattle(attackingShips: number, defendingShips: number): seaBa
             results.defender.shipCasualties += (attackingRoll * 0.01375);
         }
 
-        results.attacker.munitionsConsumed += accurateRounding(attackingShips * 2.5, 2);
-        results.attacker.gasConsumed += accurateRounding(attackingShips * 1.5, 2);
+        results.attacker.munitionsConsumed += accurateRounding(attackingShips * 3, 2);
+        results.attacker.gasConsumed += accurateRounding(attackingShips * 2, 2);
 
-        results.defender.munitionsConsumed += accurateRounding(defendingShips * 1.5, 2);
-        results.defender.gasConsumed += accurateRounding(defendingShips * 2.5, 2);
+        results.defender.munitionsConsumed += accurateRounding(defendingShips * 3, 2);
+        results.defender.gasConsumed += accurateRounding(defendingShips * 2, 2);
 
         switch (wins) {
             case 0:

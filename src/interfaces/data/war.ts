@@ -10,6 +10,19 @@ export enum operationType {
     NUKES = 'Sabotage Nukes',
 }
 
+export enum warPolicy {
+    ATTRITION = 'Attrition',
+    TURTLE = 'Turtle',
+    BLITZKRIEG = 'Blitzkrieg',
+    FORTRESS = 'Fortress',
+    MONEYBAGS = 'Moneybags',
+    PIRATE = 'Pirate',
+    TACTICIAN = 'Tactician',
+    GUARDIAN = 'Guardian',
+    COVERT = 'Covert',
+    ARCANE = 'Arcane',
+}
+
 export type spyRanges = {
     OffensiveSpyRangeMin: number;
     OffensiveSpyRangeMax: number;

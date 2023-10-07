@@ -47,6 +47,12 @@ import sendMessage from "./v2/sendMessage";
 import bannedNationQuery from "./queries/bannedNationQuery";
 import nationResourceStatQuery from "./queries/nationResourceStatQuery";
 import customQuery from "./queries/customQuery";
+import acceptPersonalTradeMutation from "./mutations/acceptPersonalTradeMutation";
+import declinePersonalTradeMutation from "./mutations/declinePersonalTradeMutation";
+import assignAlliancePositionMutation from "./mutations/assignAlliancePositionMutation";
+import editAlliancePositionMutation from "./mutations/editAlliancePositionMutation";
+import deleteAlliancePositionMutation from "./mutations/deleteAlliancePositionMutation";
+import createAlliancePositionMutation from "./mutations/createAlliancePositionMutation";
 
 
 export default class PnwKitAPI {
@@ -99,4 +105,10 @@ export default class PnwKitAPI {
     editTaxBracketMutation = editTaxBracketMutation;
     proposeTreatyMutation = proposeTreatyMutation;
     sendMessage = sendMessage;
+    acceptPersonalTradeMutation = acceptPersonalTradeMutation;
+    declinePersonalTradeMutation = declinePersonalTradeMutation;
+    assignAlliancePositionMutation = assignAlliancePositionMutation;
+    editAlliancePositionMutation = editAlliancePositionMutation;
+    deleteAlliancePositionMutation = deleteAlliancePositionMutation;
+    createAlliancePositionMutation = createAlliancePositionMutation;
 }

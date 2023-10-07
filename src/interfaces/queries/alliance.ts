@@ -31,6 +31,7 @@ export type queryAlliancesArgs = {
 }
 
 export enum alliancePositionEnum {
+    Remove = 'REMOVE',
     Noalliance = 'NOALLIANCE',
     Applicant = 'APPLICANT',
     Member = 'MEMBER',
