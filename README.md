@@ -6,6 +6,13 @@ A new 2.0 version that was made using code from pnwkit 1.0 with some modificatio
 
 - [@darkblade](https://github.com/darkblade1078)
 
+## Special Thanks
+
+- [@Henrik](https://github.com/icehenrik)
+- [@Doctor](https://github.com/BlackAsLight)
+- [@Village](https://github.com/mrvillage)
+- @Leon
+
 
 ## Installation
 
@@ -42,16 +49,14 @@ Subscriptions can give you data in real time
 ```javascript
 pnwkit.setKeys('api key');
 
-    const subscriptionChannel = await pnwkit.bankRecSubscription(
-      subscriptionEvent.CREATE,
-      test, 
-      { receiver_id: [619] }
-    );
+    const channel = await kit.subscriptionChannel(subscriptionModel.WAR, subscriptionEvent.CREATE);
 
-    console.log(subscriptionChannel.subscribed);
+    await kit.alliancePositionSubscription(channel, subscriptionEvent.UPDATE, callback);
 
-    function test(data) {
+    console.log(channel);
 
+    function callback(data: war[]) {
+      console.log(data);
     }
 ```
 
@@ -74,15 +79,19 @@ Here is a list of all the quries, mutations, and subscriptions that are supporte
 - apiKeyDetailsQuery
 - bankRecordsQuery
 - baseballGameQuery
+- bannedNationQuery
 - baseballPlayerQuery
 - baseballTeamQuery
 - bountyQuery
 - cityQuery
 - colorQuery
+- customQuery (for those who want to run custom GraphQL queries)
 - emabrgoQuery
 - gameInfoQuery
 - nationQuery
+- nationResourceStatQuery
 - resourceStatsQuery
+- topTradeInfoQuery
 - tradePricesQuery
 - tradeQuery
 - treasureQuery
@@ -91,15 +100,20 @@ Here is a list of all the quries, mutations, and subscriptions that are supporte
 - warQuery
 
 ### Mutations
+- acceptPersonalTradeMutation
+- declinePersonalTradeMutation
 - approveTreatyMutation
+- proposeTreatyMutation
+- cancelTreatyMutation
+- assignAlliancePositionMutation
+- editAlliancePositionMutation
 - assignTaxBracketMutation
+- editTaxBracketMutation
+- deleteTaxBracketMutation
 - bankDepositMutation
 - bankWithdrawMutation
-- cancelTreatyMutation
-- createTaxBracketMutation
-- deleteTaxBracketMutation
-- editTaxBracketMutation
-- proposeTreatyMutation
+- createAlliancePositionMutation
+- deleteAlliancePositionMutation
 
 ### Subscriptions
 - alliancePositionSubscription
