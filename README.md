@@ -47,17 +47,17 @@ console.log(`Deposit Date: ${bankDeposit.date}`);
 ### Subscriptions
 Subscriptions can give you data in real time
 ```javascript
-pnwkit.setKeys('api key');
+  pnwkit.setKeys('api key');
 
-    const channel = await kit.subscriptionChannel(subscriptionModel.WAR, subscriptionEvent.CREATE);
+  const channel = await kit.subscriptionChannel(subscriptionModel.WAR, subscriptionEvent.CREATE);
 
-    await kit.alliancePositionSubscription(channel, subscriptionEvent.UPDATE, callback);
+  await kit.alliancePositionSubscription(channel, subscriptionEvent.UPDATE, callback);
 
-    console.log(channel);
+  console.log(channel);
 
-    function callback(data: war[]) {
-      console.log(data);
-    }
+  function callback(data: war[]) {
+    console.log(data);
+   }
 ```
 
 ### Utilities
