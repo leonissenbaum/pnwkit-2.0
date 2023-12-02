@@ -9,14 +9,16 @@ import { war } from "../../interfaces/queries/war"
  */
 export default function activeWars(nation_id: number, wars: war[]): activeWars {
 
-    if (!wars[0].turns_left) throw new Error('PnwKit: missing turns_left');
-    if (!wars[0].def_id) throw new Error('PnwKit: missing def_id');
+    if (!wars) throw new Error('PnwKit: missing wars');
 
     if (wars.length == 0)
         return {
             offensive: 0,
             defensive: 0,
         }
+
+    if (!wars[0].turns_left) throw new Error('PnwKit: missing turns_left');
+    if (!wars[0].def_id) throw new Error('PnwKit: missing def_id');
 
     let oWars = 0;
     let dWars = 0;
