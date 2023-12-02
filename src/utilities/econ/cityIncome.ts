@@ -10,6 +10,6 @@
  */
 export default function cityIncome(cities: number, commerce: number, population: number, OP: boolean, GSA: boolean): number {
     
-    let multipler = (OP && GSA) ? 1.015 : (OP ? 1.01 : 1)
+    let multipler = (OP && GSA) ? 1.015 : (OP ? 1.01 : 1);
     return (((((commerce / 50) * 0.725) + 0.725) * population) * multipler) * cities;
 }

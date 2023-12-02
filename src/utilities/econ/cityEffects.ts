@@ -35,6 +35,16 @@ export function pollution(pollutionIndex: number): number {
 }
 
 /**
+* Gets the radiation index of a nation
+* @param {number} continentRadiation How much radiation the continenet has
+* @param {number} globalRadition How much radiation Orbis has
+* @returns {number} The radiation of the nation
+*/
+export function radiationIndex(continentRadiation: number, globalRadition: number): number {
+    return (continentRadiation + globalRadition) / 1000;
+}
+
+/**
  * Gets the pollution index in a city
  * @param {number} coalPowerPlants How much coal power plants a city has
  * @param {number} oilPowerPlants How much oil power plants a city has

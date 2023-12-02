@@ -53,6 +53,7 @@ import assignAlliancePositionMutation from "./mutations/assignAlliancePositionMu
 import editAlliancePositionMutation from "./mutations/editAlliancePositionMutation";
 import deleteAlliancePositionMutation from "./mutations/deleteAlliancePositionMutation";
 import createAlliancePositionMutation from "./mutations/createAlliancePositionMutation";
+import subscriptionChannel from "./subscriptions/subscriptionChannel";
 
 
 export default class PnwKitAPI {
@@ -111,4 +112,5 @@ export default class PnwKitAPI {
     editAlliancePositionMutation = editAlliancePositionMutation;
     deleteAlliancePositionMutation = deleteAlliancePositionMutation;
     createAlliancePositionMutation = createAlliancePositionMutation;
+    subscriptionChannel = subscriptionChannel;
 }

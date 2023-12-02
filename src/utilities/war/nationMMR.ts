@@ -2,6 +2,11 @@ import { MMR } from "../../interfaces/data/war";
 import { nation } from "../../interfaces/queries/nation";
 import accurateRounding from "../other/accurateRounding";
 
+/**
+ * Get a nation's MMR
+ * @param {nation} nation The nation you want to get MMR from
+ * @returns {MMR} The nation's MMR
+ */
 export default function nationMMR(nation: nation): MMR {
 
     if (nation.cities == undefined) throw new Error(`PnwKit: missing nation.cities`);

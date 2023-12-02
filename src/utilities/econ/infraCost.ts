@@ -12,7 +12,7 @@ import getPercentage from "../other/getPercentage";
  * @param {boolean} GSA If you have Government Agency Support
  * @returns {number} The cost of infra
  */
-export default function infraCost(startingAmount: number, endingAmount: number, cities: number, CCE: boolean, AEC: boolean, URB: boolean, GSA: boolean) {
+export default function infraCost(startingAmount: number, endingAmount: number, cities: number, CCE: boolean, AEC: boolean, URB: boolean, GSA: boolean): number {
 
   let infraPrice = infraCostFormula(startingAmount, endingAmount);
   let percentage = 100;
@@ -28,7 +28,7 @@ export default function infraCost(startingAmount: number, endingAmount: number, 
 }
 
 
-function infraCostFormula(startingAmount: number, endingAmount: number) {
+function infraCostFormula(startingAmount: number, endingAmount: number): number {
 
   let value = 0;
   let cost_of_chunk = 0;
@@ -73,6 +73,6 @@ function infraCostFormula(startingAmount: number, endingAmount: number) {
   return value;
 }
 
-function InfraPrice(amount: number) {
+function InfraPrice(amount: number): number {
   return (Math.pow(Math.abs(amount - 10), 2.2) / 710) + 300;
 }

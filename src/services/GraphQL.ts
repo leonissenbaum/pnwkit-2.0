@@ -1,6 +1,7 @@
 import superagent from 'superagent';
 import { responseAndMetadataI } from '../interfaces/other';
 import { anyCall } from '../interfaces';
+import { channelSubscription, subscriptionEvent, subscriptionModel } from '../interfaces/subscriptions';
 
 /**
  * An internal method of handling calls to the P&W graphQL API
@@ -13,7 +14,7 @@ class GraphQLService {
    * @param {string} query The GraphQL query to make
    * @param {string} apiKey Your P&W API key
    *
-   * @return {Promise<any>} Returns data to be type determined in a closer function
+   * @return {Promise<responseAndMetadataI>} Returns data to be type determined in a closer function
    * @throws {Error}
    */
   public async makeCall(query: string, apiKey: string): Promise<responseAndMetadataI> {
@@ -49,7 +50,7 @@ class GraphQLService {
  * @param {string} apiKey Your P&W API key
  * @param {string} botKey Your P&W bot key
  *
- * @return {Promise<any>} Returns data to be type determined in a closer function
+ * @return {Promise<responseAndMetadataI>} Returns data to be type determined in a closer function
  * @throws {Error}
  */
   public async makeMutationCall(query: string, apiKey: string, botKey: string): Promise<responseAndMetadataI> {
@@ -83,6 +84,28 @@ class GraphQLService {
         reset: Number(res.get('X-RateLimit-Reset')),
       },
     };
+  }
+
+  /**
+* Calls the Politics and War V3 API with a mutation
+* @param {string} link The Channel Link
+* @param {string} apiKey Your P&W API key
+*
+* @return {Promise<any>} Returns data to be type determined in a closer function
+* @throws {Error}
+*/
+  public async makeChannelCall(model: subscriptionModel, event: subscriptionEvent, apiKey: string, filters?: string): Promise<channelSubscription> {
+    if (!apiKey) throw new Error('GraphQLService: Cannot make a call without an API key!');
+
+    if (!filters)
+      filters = ``;
+
+    const res = await superagent.get(`https://api.politicsandwar.com/subscriptions/v1/subscribe/${model}/${event}?api_key=${apiKey}${filters}`)
+      .catch((e: Error) => {
+        throw new Error(`GraphQLService: Failed to make api call, ${e}`);
+      });
+
+    return res.body;
   }
 
   /**

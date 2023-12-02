@@ -12,10 +12,14 @@ import espionageOdds from './war/espionageOdds';
 import { groundBattle, airBattle, seaBattle } from './war/battleSimulations';
 import { pollution, pollutionIndex, crime, disease } from './econ/cityEffects';
 import projectCost from './econ/projectCost';
-import cityIncome from './econ/income';
+import cityIncome from './econ/cityIncome';
 import allianceMMR from './war/allianceMMR';
 import nationMMR from './war/nationMMR';
 import sphereTiering from './war/sphereTiering';
+import activeWars from './war/activeWars';
+import allianceTiering from './war/allianceTiering';
+import checkProjectBit from './econ/checkProjectBit';
+import getDaysBetween from './other/getDaysBetween';
 
 export default class PnwKitUtils {
     getPercentage = getPercentage;
@@ -41,4 +45,9 @@ export default class PnwKitUtils {
     allianceMMR = allianceMMR;
     nationMMR = nationMMR;
     sphereTiering = sphereTiering;
+    activeWars = activeWars;
+    allianceTiering = allianceTiering;
+    checkProjectBit = checkProjectBit;
+    getDaysBetween = getDaysBetween;
+    
 }

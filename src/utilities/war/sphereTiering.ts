@@ -2,6 +2,11 @@ import { alliance } from "../../interfaces/queries/alliance";
 import { tiering } from "../../interfaces/data/war";
 import { nation } from "../../interfaces/queries/nation";
 
+/**
+ * Get an spheres tiering
+ * @param {alliance[]} alliances an array of alliances that you want to get tiering from
+ * @returns {tiering} The sphere's tiering
+ */
 export default function sphereTiering(alliances: alliance[]): tiering {
 
     if (alliances[0].nations == undefined) throw new Error(`PnwKit: missing alliances.nations`);

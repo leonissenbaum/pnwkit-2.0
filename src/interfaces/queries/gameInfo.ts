@@ -2,7 +2,8 @@ import { Maybe, Scalars } from ".."
 
 export type gameInfo = {
     __typename?: 'gameInfo'
-    game_date?: Maybe<radiation>
+    game_date?: Maybe<Scalars['DateTimeAuto']>
+    radiation?: Maybe<radiation>
 }
 
 export type radiation = {

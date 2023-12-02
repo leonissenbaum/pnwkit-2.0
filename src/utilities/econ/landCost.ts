@@ -12,7 +12,7 @@ import getPercentage from "../other/getPercentage";
  * @param {boolean} GSA If you have Government Agency Support
  * @returns {number} The cost of land
  */
-export default function landCost(startingAmount: number, endingAmount: number, cities: number, ALA: boolean, AEC: boolean, RE: boolean, GSA: boolean) {
+export default function landCost(startingAmount: number, endingAmount: number, cities: number, ALA: boolean, AEC: boolean, RE: boolean, GSA: boolean): number {
 
     let landPrice = landCostFormula(startingAmount, endingAmount);
     let percentage = 100;
@@ -28,7 +28,7 @@ export default function landCost(startingAmount: number, endingAmount: number, c
     return landPrice;
 }
 
-function landCostFormula(starting_amount: number, ending_amount: number) {
+function landCostFormula(starting_amount: number, ending_amount: number): number {
     let value = 0;
     let cost_of_chunk = 0;
     starting_amount = accurateRounding(starting_amount, 2);
@@ -71,6 +71,6 @@ function landCostFormula(starting_amount: number, ending_amount: number) {
     return value;
 }
 
-function landPrice(amount: number) {
+function landPrice(amount: number): number {
     return (.002 * (amount - 20) * (amount - 20)) + 50;
 }

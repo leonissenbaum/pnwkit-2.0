@@ -1,5 +1,3 @@
-import { cityCosts } from "../../interfaces/data/econ";
-import { tradeprice } from "../../interfaces/queries/tradePrice";
 import getPercentage from "../other/getPercentage";
 
 /**
@@ -28,7 +26,7 @@ export default function cityCost(startingCity: number, endingCity: number, UP: b
         else if (i >= 11 && UP)
             formula = (50000 * Math.pow((i - 1), 3) + 150000 * i + 75000) - 50000000;
         else
-            formula = (50000 * Math.pow((i - 1), 3) + 150000 * i + 75000)
+            formula = (50000 * Math.pow((i - 1), 3) + 150000 * i + 75000);
 
         costs += formula - getPercentage(formula, percentage);
     }
