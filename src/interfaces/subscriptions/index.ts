@@ -23,6 +23,18 @@ export enum subscriptionModel {
     ACCOUNT = 'account',
 }
 
+export enum subscriptionCluster {
+    NORTHVIRGINIA = 'mt1',
+    OHIO = 'us2',
+    OREGON = 'us3',
+    IRELAND = 'eu',
+    SINGAPORE = 'ap1',
+    MUMBAI = 'ap2',
+    TOKYO = 'ap3',
+    SYDNEY = 'ap4',
+    SAOPAULO = 'sa1',
+}
+
 export type subscriptionFilters = {
     id?: number[],
     sender_id?: number[],
