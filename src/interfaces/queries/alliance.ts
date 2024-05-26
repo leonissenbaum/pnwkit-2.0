@@ -1,6 +1,8 @@
 import { Maybe, Scalars } from "..";
+import { award } from "../data/other";
 import { paginatorInfo, sortOrder } from "../other";
 import { bankrec, taxBracket } from "./bank";
+import { bulletin } from "./bulletin";
 import { nation } from "./nation";
 import { treaty } from './treaty';
 import { war } from "./war";
@@ -103,4 +105,7 @@ export type alliance = {
     steel?: Maybe<Scalars['Float']>
     aluminum?: Maybe<Scalars['Float']>
     food?: Maybe<Scalars['Float']>
+    awards?: Maybe<award[]>
+    rank?: Maybe<Scalars['Int']>
+    bulletins?: Maybe<bulletin[]>
 }

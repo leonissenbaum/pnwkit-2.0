@@ -25,6 +25,8 @@ import { queryTreatiesArgs } from "./queries/treaty";
 import { queryWarsArgs } from "./queries/war";
 import { queryWarattacksArgs } from "./queries/warAttack";
 import { mutationAssignAlliancePositionArgs, mutationCreateAlliancePositionArgs, mutationDeleteAlliancePositionArgs } from "./mutations/alliancePosition";
+import { queryBulletinArgs } from "./queries/bulletin";
+import { queryBulletinReplyArgs } from "./queries/bulletinReplies";
 
 export type anyCall =
     queryActivityStatsArgs |
@@ -58,7 +60,9 @@ export type anyCall =
     mutationDeclinePersonalTradeArgs |
     mutationAssignAlliancePositionArgs |
     mutationCreateAlliancePositionArgs |
-    mutationDeleteAlliancePositionArgs;
+    mutationDeleteAlliancePositionArgs |
+    queryBulletinArgs |
+    queryBulletinReplyArgs;
 
 export type Maybe<T> = T | null;
 

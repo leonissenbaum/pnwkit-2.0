@@ -54,6 +54,8 @@ import editAlliancePositionMutation from "./mutations/editAlliancePositionMutati
 import deleteAlliancePositionMutation from "./mutations/deleteAlliancePositionMutation";
 import createAlliancePositionMutation from "./mutations/createAlliancePositionMutation";
 import subscriptionChannel from "./subscriptions/subscriptionChannel";
+import bulletinQuery from "./queries/bulletinQuery";
+import bulletinReplyQuery from "./queries/bulletinReplyQuery";
 
 
 export default class PnwKitAPI {
@@ -81,6 +83,8 @@ export default class PnwKitAPI {
     bannedNationQuery = bannedNationQuery;
     nationResourceStatQuery = nationResourceStatQuery;
     customQuery = customQuery;
+    bulletinQuery = bulletinQuery;
+    bulletinReplyQuery = bulletinReplyQuery;
     alliancePositionSubscription = alliancePositionSubscription;
     allianceSubscription = allianceSubscription;
     bankRecSubscription = bankRecSubscription;

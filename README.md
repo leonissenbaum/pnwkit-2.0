@@ -98,6 +98,8 @@ Here is a list of all the quries, mutations, and subscriptions that are supporte
 - treasureTradeQuery
 - warAttackQuery
 - warQuery
+- bulletinQuery
+- bulletinRepliesQuery
 
 ### Mutations
 - acceptPersonalTradeMutation
