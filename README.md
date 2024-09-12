@@ -11,7 +11,7 @@ A new 2.0 version that was made using code from pnwkit 1.0 with some modificatio
 - [@Henrik](https://github.com/icehenrik)
 - [@Doctor](https://github.com/BlackAsLight)
 - [@Village](https://github.com/mrvillage)
-- @Leon
+- [@leonissenbaum](https://github.com/leonissenbaum)
 
 
 ## Installation
@@ -98,6 +98,8 @@ Here is a list of all the quries, mutations, and subscriptions that are supporte
 - treasureTradeQuery
 - warAttackQuery
 - warQuery
+- bulletinQuery
+- bulletinRepliesQuery
 
 ### Mutations
 - acceptPersonalTradeMutation

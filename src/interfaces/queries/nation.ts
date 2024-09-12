@@ -1,4 +1,5 @@
 import { Maybe, Scalars } from "..";
+import { award } from "../data/other";
 import { paginatorInfo, sortOrder } from "../other";
 import { alliance, alliancePositionEnum, allliancePosition } from "./alliance";
 import { bankrec } from "./bank";
@@ -144,7 +145,9 @@ export type nation = {
     leader_name?: Maybe<Scalars['String']>
     continent?: Maybe<Scalars['String']>
     war_policy?: Maybe<warPolicy>
+    war_policy_turns?: Maybe<Scalars['Int']>
     domestic_policy: Maybe<domesticPolicy>
+    domestic_policy_turns?: Maybe<Scalars['Int']>
     color?: Maybe<Scalars['String']>
     num_cities?: Maybe<Scalars['Int']>
     cities: Array<city>
@@ -245,12 +248,19 @@ export type nation = {
     spy_kills?: Maybe<Scalars['Int']>
     spy_attacks?: Maybe<Scalars['Int']>
     money_looted?: Maybe<Scalars['Float']>
+    total_infrastructure_destroyed?: Maybe<Scalars['Float']>
+    total_infrastructure_lost?: Maybe<Scalars['Float']>
     vip?: Maybe<Scalars['Boolean']>
-    commendations?:  Maybe<Scalars['Int']>
-    denouncements?:  Maybe<Scalars['Int']>
+    commendations?: Maybe<Scalars['Int']>
+    denouncements?: Maybe<Scalars['Int']>
+    offensive_wars_count?: Maybe<Scalars['Int']>
+    defensive_wars_count?: Maybe<Scalars['Int']>
     economic_policy?:  Maybe<economicPolicy>
     social_policy?:  Maybe<socialPolicy>
     government_type?:  Maybe<govermentType>
     credits_redeemed_this_month?: Maybe<Scalars['Int']>
     alliance_join_date?: Maybe<Scalars['DateTimeAuto']>
+    awards?: Maybe<award[]>
+    bulletins?: Maybe<Scalars['Int']>
+    bulletin_replies?: Maybe<Scalars['Int']>
 }

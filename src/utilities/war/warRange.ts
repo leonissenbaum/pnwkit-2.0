@@ -8,8 +8,8 @@ import { warRanges } from "../../interfaces/data/war";
 export default function warRange(score: number): warRanges {
     return {
         OffensiveWarRangeMin: score * 0.75,
-        OffensiveWarRangeMax: score * 1.75,
+        OffensiveWarRangeMax: score * 2.5,
         DefensiveWarRangeMin: score / 0.75,
-        DefensiveWarRangeMax: score / 1.75,
+        DefensiveWarRangeMax: score / 2.5,
     }
 }

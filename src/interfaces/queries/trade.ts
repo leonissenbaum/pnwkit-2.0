@@ -13,7 +13,7 @@ export enum queryTradesOrderByColumn {
     DATE_ACCEPTED = 'DATE_ACCEPTED',
     OFFER_RESOURCE = 'OFFER_RESOURCE',
     OFFER_AMOUNT = 'OFFER_AMOUNT',
-    RETURN_AMOUNT = 'RETURN_AMOUNT',
+    PRICE = 'PRICE',
 }
 
 export enum tradeType {
