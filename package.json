@@ -11,6 +11,9 @@
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "darkblade",
   "license": "ISC",
   "dependencies": {
