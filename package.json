@@ -1,5 +1,5 @@
 {
-  "name": "pnwkit-2.0",
+  "name": "@leonissenbaum/pnwkit-2.0",
   "version": "1.5.40",
   "description": "The reincarnation of pnwkit by BSNK",
   "main": "build/src/index.js",
