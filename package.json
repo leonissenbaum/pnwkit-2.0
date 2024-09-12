@@ -7,6 +7,10 @@
   "files": [
     "build"
   ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
   "author": "darkblade",
   "license": "ISC",
   "dependencies": {
