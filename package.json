@@ -1,6 +1,6 @@
 {
   "name": "@leonissenbaum/pnwkit-2.0",
-  "version": "1.5.41",
+  "version": "1.5.42",
   "description": "The reincarnation of pnwkit by BSNK",
   "main": "build/src/index.js",
   "module": "build/src/index.js",
@@ -18,14 +18,14 @@
   "author": "darkblade",
   "license": "ISC",
   "dependencies": {
-    "memoize": "^0.1.1",
+    "memoize": "^10.0.0",
     "memoizee": "^0.4.15",
-    "pusher-js": "^8.0.2",
-    "superagent": "^8.0.9"
+    "pusher-js": "^8.4.0-rc2",
+    "superagent": "^10.1.0"
   },
   "devDependencies": {
     "@types/memoizee": "^0.4.8",
-    "@types/superagent": "^4.1.18",
+    "@types/superagent": "^8.1.9",
     "typescript": "^5.4.5"
   },
   "repository": {
