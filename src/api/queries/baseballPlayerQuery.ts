@@ -54,7 +54,7 @@ export default async function baseballPlayerQuery(
 
   this.setRateLimit(res.rateLimit);
 
-  if (paginator) return res.data.baseball_players$ as baseballPlayerPaginator;
+  if (paginator) return res.data.baseball_players as baseballPlayerPaginator;
 
   return res.data.baseball_players.data as baseballPlayer[];
 }
