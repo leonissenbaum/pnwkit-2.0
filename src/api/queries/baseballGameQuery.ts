@@ -59,7 +59,7 @@ export default async function baseballGameQuery(
 
   this.setRateLimit(res.rateLimit);
 
-  if (paginator) return res.data.nations as baseballGamePaginator;
+  if (paginator) return res.data.baseball_games as baseballGamePaginator;
 
-  return res.data.nations.data as baseballGame[];
+  return res.data.baseball_games.data as baseballGame[];
 }
