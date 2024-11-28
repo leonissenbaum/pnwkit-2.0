@@ -12,6 +12,7 @@ A new 2.0 version that was made using code from pnwkit 1.0 with some modificatio
 - [@Doctor](https://github.com/BlackAsLight)
 - [@Village](https://github.com/mrvillage)
 - [@leonissenbaum](https://github.com/leonissenbaum)
+- [@Sol](https://github.com/S0l4RIS9uk)
 
 
 ## Installation
