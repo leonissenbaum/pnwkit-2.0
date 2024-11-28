@@ -19,30 +19,12 @@ export default async function topTradeInfoQuery(
     const res = await GraphQL.makeCall(`
     {
     top_trade_info {
-        ${(paginator) ?
-            `
-          paginatorInfo {
-            count,
-            currentPage,
-            firstItem,
-            hasMorePages,
-            lastItem,
-            lastPage,
-            perPage,
-            total
-          },
-          `: ''
-        }
         ${query}
       }
     }
   `, this.apiKey);
 
     this.setRateLimit(res.rateLimit);
-
-    if (paginator) {
-        return res.data as topTradeInfoPaginator;
-    }
-
+    
     return res.data.top_trade_info as topTradeInfo;
 }
