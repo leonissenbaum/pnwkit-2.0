@@ -21,7 +21,7 @@ export default async function bankRecSubscription(this: Kit, channel: string, ev
 
     const newChannel = pusher.subscribe(channel);
 
-    newChannel.bind(`BULK_ALLIANCE_${event.toUpperCase()}`, callback);
+    newChannel.bind(`BULK_BANKREC_${event.toUpperCase()}`, callback);
 
     return;
 }
