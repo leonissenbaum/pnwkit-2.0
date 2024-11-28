@@ -44,31 +44,13 @@ export default async function nationResourceStatQuery(
 
   const res = await GraphQL.makeCall(`
     {
-      nations${argsToParameters} {
-        ${(paginator) ?
-      `
-          paginatorInfo {
-            count,
-            currentPage,
-            firstItem,
-            hasMorePages,
-            lastItem,
-            lastPage,
-            perPage,
-            total
-          },
-          `: ''
-    }
-        data {
+      nation_resource_stats{argsToParameters} {
           ${query}
-        }
       }
     }
   `, this.apiKey);
 
   this.setRateLimit(res.rateLimit);
 
-  if (paginator) return res.data.nations as nationResourceStatPaginator;
-
-  return res.data.nations.data as nationResourceStat[];
+  return res.data.nation_resource_stats as nationResourceStat[];
 }
