@@ -4,6 +4,7 @@ export type gameInfo = {
     __typename?: 'gameInfo'
     game_date?: Maybe<Scalars['DateTimeAuto']>
     radiation?: Maybe<radiation>
+    city_average?: Maybe<Scalars['Float']>
 }
 
 export type radiation = {

@@ -19,7 +19,7 @@ import treasureTradeQuery from "./queries/treasureTradeQuery";
 import warAttackQuery from "./queries/warAttackQuery";
 import warQuery from "./queries/warQuery";
 import topTradeInfoQuery from "./queries/topTradeInfoQuery";
-import treatyQuery from "./queries/treatyQueries";
+import treatyQuery from "./queries/treatyQuery";
 import alliancePositionSubscription from "./subscriptions/alliancePositionSubscription";
 import allianceSubscription from "./subscriptions/allianceSubscription";
 import bankRecSubscription from "./subscriptions/bankRecSubscription";
