@@ -19,6 +19,7 @@ import treasureTradeQuery from "./queries/treasureTradeQuery";
 import warAttackQuery from "./queries/warAttackQuery";
 import warQuery from "./queries/warQuery";
 import topTradeInfoQuery from "./queries/topTradeInfoQuery";
+import treatyQuery from "./queries/treatyQueries";
 import alliancePositionSubscription from "./subscriptions/alliancePositionSubscription";
 import allianceSubscription from "./subscriptions/allianceSubscription";
 import bankRecSubscription from "./subscriptions/bankRecSubscription";
@@ -85,6 +86,7 @@ export default class PnwKitAPI {
     customQuery = customQuery;
     bulletinQuery = bulletinQuery;
     bulletinReplyQuery = bulletinReplyQuery;
+    treatyQuery = treatyQuery;
     alliancePositionSubscription = alliancePositionSubscription;
     allianceSubscription = allianceSubscription;
     bankRecSubscription = bankRecSubscription;
